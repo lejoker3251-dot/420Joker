@@ -20,6 +20,8 @@
 <meta name="twitter:image" content="https://lejoker3251-dot.github.io/420Joker/og-image.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%83%8F%3C/text%3E%3C/svg%3E">
 <meta name="description" content="420 Joker: Fortnite Creator auf TikTok, YouTube und Twitch.">
+<link rel="preload" as="image" href="karte-lila.webp" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff" href="AgentOrange.woff" crossorigin>
 <style>
 @font-face{font-family:"Agent Orange";src:url(AgentOrange.woff) format("woff");font-display:swap}
 :root{--card:url(karte-lila.webp)}
@@ -110,6 +112,10 @@ main p,.say,.stats span{text-shadow:0 1px 16px rgba(5,3,9,.9),0 0 3px rgba(5,3,9
 .contact{margin-top:34px}
 .badge{display:inline-flex;align-items:center;gap:6px}
 footer a{display:inline-flex;align-items:center;gap:7px}
+.soc{display:flex;gap:12px;margin-top:26px}
+.soc a{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;background:rgba(255,255,255,.05);backdrop-filter:blur(8px);transition:background .25s,color .25s,transform .25s}
+.soc a:hover{background:var(--ink);color:#0a0710;transform:translateY(-3px)}
+.soc .ic{width:21px;height:21px}
 .soon{padding:44px 0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px 32px;align-items:center}
 .soon b{font:400 clamp(34px,6vw,54px)/1 var(--serif);color:var(--acc)}
 .soon span{color:var(--mute);max-width:42ch}
@@ -256,9 +262,9 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
   <div class="wrap">
     <a class="mark" href="#">420 Joker</a>
     <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="tools">Menü</button>
-    <div class="tools" id="tools">
+    <nav class="tools" id="tools" aria-label="Hauptmenü">
       <a href="#streams" id="navStreams">Streams</a><a href="#neu">Kanäle</a><a href="#creator-code">Code</a>
-    </div>
+    </nav>
   </div>
 </header>
 
@@ -276,6 +282,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
         <a class="btn" href="#creator">Folge mir</a>
         <a class="link" href="#creator-code">Creator-Code nutzen</a>
       </div>
+      <div class="soc" role="group" aria-label="Meine Kanäle"><a href="https://www.tiktok.com/@greengrowseeds" target="_blank" rel="noopener" aria-label="TikTok"><svg class="ic" aria-hidden="true"><use href="#i-tiktok"/></svg></a><a href="https://www.youtube.com/@Real420Joker" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ic" aria-hidden="true"><use href="#i-youtube"/></svg></a><a href="https://www.twitch.tv/LeJoker3251" target="_blank" rel="noopener" aria-label="Twitch"><svg class="ic" aria-hidden="true"><use href="#i-twitch"/></svg></a><a href="https://discord.gg/5wPdtbftAr" target="_blank" rel="noopener" aria-label="Discord"><svg class="ic" aria-hidden="true"><use href="#i-discord"/></svg></a></div>
       <div class="pill">Fortnite Creator-Code <b>420 Joker</b></div>
     </div>
   </div>
@@ -525,7 +532,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
 })();
 </script>
 <script>
-(function(){
+addEventListener("load",function(){(window.requestIdleCallback||setTimeout)(function(){
 var cv=document.getElementById("gl");if(!cv)return;
 var gl=cv.getContext("webgl",{alpha:true,premultipliedAlpha:true,antialias:true});
 if(!gl){cv.remove();return}
@@ -659,7 +666,7 @@ function frame(now){
  last=now;requestAnimationFrame(frame)}
 function req(){if(!still||pend)return;pend=1;requestAnimationFrame(function(now){pend=0;draw(now)})}
 if(!still)requestAnimationFrame(frame);
-})();
+},{timeout:1200})});
 </script>
 </body>
 </html>
