@@ -21,6 +21,14 @@ Statische Seite ohne Build-Schritt, läuft direkt auf GitHub Pages: https://lejo
 ```
 `true` setzen, speichern (Commit). Nach 1 bis 2 Minuten zeigt die Seite „LIVE“. Danach wieder auf `false`.
 
+## Banner und Zahlen (`live.json`)
+```json
+"banner": { "text": "Neue Season: Code 420 Joker", "url": "#creator-code" },
+"stats": { "tiktok": 2886, "youtube": 1, "twitch": 0 }
+```
+- Der Banner erscheint oben. Mit `"banner": {}` oder leerem Text verschwindet er.
+- Zahlen unter 100 zeigt die Seite nicht an. Trage sie trotzdem ein, sie erscheinen von selbst, sobald sie die Schwelle erreichen.
+
 ## Stream-Plan (`live.json`)
 ```json
 "plan": [

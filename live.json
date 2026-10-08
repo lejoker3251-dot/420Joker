@@ -2,5 +2,14 @@
   "twitch": false,
   "youtube": false,
   "tiktok": false,
+  "banner": {
+    "text": "Creator-Code im Item-Shop: 420 Joker",
+    "url": "#creator-code"
+  },
+  "stats": {
+    "tiktok": 2886,
+    "youtube": 1,
+    "twitch": 0
+  },
   "plan": []
 }
