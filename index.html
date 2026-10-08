@@ -85,7 +85,9 @@ a{color:inherit;text-decoration:none}
 .hvid.on{opacity:.4}
 .thumb{position:relative;overflow:hidden}
 .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.thumb svg{position:relative}
+.thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(5,3,9,.6))}
+.thumb svg{position:relative;z-index:1}
+.badge{position:absolute;left:12px;top:12px;z-index:1;padding:5px 12px;border-radius:99px;background:rgba(5,3,9,.65);backdrop-filter:blur(6px);border:1px solid var(--line);font-size:12px;font-weight:600}
 #gl{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
 .tile{perspective:900px}
 .tile .thumb{transform-style:preserve-3d}
@@ -237,7 +239,7 @@ footer a{margin-right:20px}footer a:hover{color:var(--ink)}
     <a class="mark" href="#">420 Joker</a>
     <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="tools">Menü</button>
     <div class="tools" id="tools">
-      <a href="#streams" id="navStreams">Streams</a><a href="#neu">Clips</a><a href="#creator-code">Code</a>
+      <a href="#streams" id="navStreams">Streams</a><a href="#neu">Kanäle</a><a href="#creator-code">Code</a>
     </div>
   </div>
 </header>
@@ -295,12 +297,12 @@ footer a{margin-right:20px}footer a:hover{color:var(--ink)}
 
 <section id="neu">
   <div class="wrap">
-    <h2>Neu <em>von mir.</em></h2>
+    <h2>Folge dem <em>Joker.</em></h2>
     <!-- Wird durch clips.json ersetzt, sobald dort Clips eingetragen sind. -->
     <div class="tiles" id="tiles">
-      <a class="tile" href="https://www.youtube.com/@Real420Joker" target="_blank" rel="noopener"><div class="thumb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><h3>Auf YouTube</h3><p>Videos und Highlights</p></a>
-      <a class="tile" href="https://www.twitch.tv/LeJoker3251" target="_blank" rel="noopener"><div class="thumb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><h3>Auf Twitch</h3><p>Live-Streams und Gaming</p></a>
-      <a class="tile" href="https://www.tiktok.com/@greengrowseeds" target="_blank" rel="noopener"><div class="thumb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><h3>Auf TikTok</h3><p>Kurze Clips</p></a>
+      <a class="tile" href="https://www.youtube.com/@Real420Joker" target="_blank" rel="noopener"><div class="thumb"><img src="thumb-youtube.webp" alt="" loading="lazy"><span class="badge">YouTube</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><h3>Auf YouTube</h3><p>Videos und Highlights</p></a>
+      <a class="tile" href="https://www.twitch.tv/LeJoker3251" target="_blank" rel="noopener"><div class="thumb"><img src="thumb-twitch.webp" alt="" loading="lazy"><span class="badge">Twitch</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><h3>Auf Twitch</h3><p>Live-Streams und Gaming</p></a>
+      <a class="tile" href="https://www.tiktok.com/@greengrowseeds" target="_blank" rel="noopener"><div class="thumb"><img src="thumb-tiktok.webp" alt="" loading="lazy"><span class="badge">TikTok</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><h3>Auf TikTok</h3><p>Kurze Clips</p></a>
     </div>
   </div>
 </section>

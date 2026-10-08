@@ -11,6 +11,7 @@ Statische Seite ohne Build-Schritt, läuft direkt auf GitHub Pages: https://lejo
 - `clips.json` – Clip-Liste
 - `og-image.jpg`, `apple-touch-icon.png` – Vorschaubild für geteilte Links und App-Symbol
 - `404.html`, `sitemap.xml` – Fehlerseite und Suchmaschinen-Angabe
+- `thumb-*.webp` – Bilder der drei Kanal-Kacheln
 - `karte-*.webp`, `AgentOrange.woff` – Bilder und Schrift
 - optional: `hero.mp4` – kurzer, stummer Loop (5 bis 8 Sekunden) für den Hero
 
