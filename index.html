@@ -2,6 +2,7 @@
 <html lang="de" data-theme="lila">
 <head>
 <meta charset="utf-8">
+<script>document.documentElement.className+=" js"</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>420 Joker – Fortnite Creator</title>
 <meta name="theme-color" content="#050309">
@@ -90,12 +91,13 @@ a{color:inherit;text-decoration:none}
 .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(5,3,9,.6))}
 .thumb svg{position:relative;z-index:1}
 .badge{position:absolute;left:12px;top:12px;z-index:1;padding:5px 12px;border-radius:99px;background:rgba(5,3,9,.65);backdrop-filter:blur(6px);border:1px solid var(--line);font-size:12px;font-weight:600}
-#gl{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+#gl{opacity:0;transition:opacity 1.6s ease;position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
 .tile{perspective:900px}
 .tile .thumb{transform-style:preserve-3d}
 .tile:hover .thumb{transform:translateY(-8px) rotateX(5deg) rotateY(-6deg);box-shadow:0 34px 60px -24px var(--glow)}
 .code{box-shadow:0 50px 100px -40px var(--glow),0 2px 0 rgba(255,255,255,.08) inset}
 main p,.say,.stats span{text-shadow:0 1px 16px rgba(5,3,9,.9),0 0 3px rgba(5,3,9,.6)}
+#gl.on{opacity:1}
 #cardhint{position:fixed;z-index:6;translate:-50% 0;padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:rgba(16,10,28,.78);backdrop-filter:blur(8px);font-size:12px;color:var(--ink);pointer-events:none;opacity:0;transition:opacity .4s;white-space:nowrap}
 #cardhint.on{opacity:1}
 .ic{width:1.15em;height:1.15em;fill:currentColor;flex:none}
@@ -116,6 +118,26 @@ footer a{display:inline-flex;align-items:center;gap:7px}
 .soc a{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;background:rgba(255,255,255,.05);backdrop-filter:blur(8px);transition:background .25s,color .25s,transform .25s}
 .soc a:hover{background:var(--ink);color:#0a0710;transform:translateY(-3px)}
 .soc .ic{width:21px;height:21px}
+.js .hero:not(.go) .rv{opacity:0}
+.hero.go .rv{animation:rvIn .85s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--r,0)*110ms + 700ms)}
+@keyframes rvIn{from{opacity:0;transform:translateY(28px) scale(.92)}}
+.w{display:inline-block;white-space:nowrap}
+.ch{display:inline-block;opacity:0}
+.hero.go .ch{animation:chIn .8s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*42ms)}
+@keyframes chIn{from{opacity:0;transform:translateY(.6em) rotate(10deg) scale(.7)}to{opacity:1;transform:none}}
+#prog{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:linear-gradient(90deg,#7c3aed,#c79bff);transform-origin:left;transform:scaleX(var(--p,0));pointer-events:none}
+.js .rv2{opacity:0;transform:translateX(var(--dx,-40px))}
+#streams{overflow-x:clip}
+.rv2.in{opacity:1;transform:none;transition:opacity .8s var(--td,0s),transform .9s cubic-bezier(.2,.8,.2,1) var(--td,0s)}
+.cd{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;margin-bottom:28px}
+.cd span{color:var(--mute)}
+.cd b{font:400 clamp(30px,6vw,48px)/1 var(--serif);color:var(--acc);font-variant-numeric:tabular-nums}
+.cd small{flex-basis:100%;color:var(--mute);font-size:15px}
+.tz{color:var(--mute);font-size:13px;margin-top:14px}
+.proof{display:inline-flex;align-items:center;gap:9px;margin-top:22px;font-size:15px;color:var(--mute)}
+.proof b{color:var(--ink);font-weight:600}
+.js .wd{opacity:.22;transition:opacity .3s}
+.js .wd.on{opacity:1}
 .soon{padding:44px 0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px 32px;align-items:center}
 .soon b{font:400 clamp(34px,6vw,54px)/1 var(--serif);color:var(--acc)}
 .soon span{color:var(--mute);max-width:42ch}
@@ -258,6 +280,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
 <a class="skip" href="#bereiche">Zum Inhalt</a>
 <div class="bg" id="bg" aria-hidden="true"></div><div class="spot" aria-hidden="true"></div><canvas id="gl" aria-hidden="true"></canvas><div id="cardhint" aria-hidden="true">Karte antippen</div>
 <header id="top">
+  <div id="prog" aria-hidden="true"></div>
   <div class="ann" id="ann" hidden><span id="annText"></span><button type="button" id="annX" aria-label="Hinweis schließen">&times;</button></div>
   <div class="wrap">
     <a class="mark" href="#">420 Joker</a>
@@ -276,14 +299,15 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
   <div class="wrap">
     <div>
       <h1>Der Joker<br>ist <em>im Spiel.</em></h1>
-      <p class="lead">420 Joker, Fortnite Creator. Gaming auf TikTok, YouTube und Twitch.</p>
-      <div class="cta">
+      <p class="lead rv" style="--r:0">420 Joker, Fortnite Creator. Gaming auf TikTok, YouTube und Twitch.</p>
+      <div class="cta rv" style="--r:1">
         
-        <a class="btn" href="#creator">Folge mir</a>
+        <a class="btn" href="https://www.tiktok.com/@greengrowseeds" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-tiktok"/></svg>Auf TikTok folgen</a>
         <a class="link" href="#creator-code">Creator-Code nutzen</a>
       </div>
-      <div class="soc" role="group" aria-label="Meine Kanäle"><a href="https://www.tiktok.com/@greengrowseeds" target="_blank" rel="noopener" aria-label="TikTok"><svg class="ic" aria-hidden="true"><use href="#i-tiktok"/></svg></a><a href="https://www.youtube.com/@Real420Joker" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ic" aria-hidden="true"><use href="#i-youtube"/></svg></a><a href="https://www.twitch.tv/LeJoker3251" target="_blank" rel="noopener" aria-label="Twitch"><svg class="ic" aria-hidden="true"><use href="#i-twitch"/></svg></a><a href="https://discord.gg/5wPdtbftAr" target="_blank" rel="noopener" aria-label="Discord"><svg class="ic" aria-hidden="true"><use href="#i-discord"/></svg></a></div>
-      <div class="pill">Fortnite Creator-Code <b>420 Joker</b></div>
+      <div class="proof rv" id="proof" style="--r:2" hidden><svg class="ic" aria-hidden="true"><use href="#i-tiktok"/></svg><span><b id="pv"></b> Follower auf TikTok</span></div>
+      <div class="soc" role="group" aria-label="Meine Kanäle"><a class="rv" style="--r:3" href="https://www.tiktok.com/@greengrowseeds" target="_blank" rel="noopener" aria-label="TikTok"><svg class="ic" aria-hidden="true"><use href="#i-tiktok"/></svg></a><a class="rv" style="--r:4" href="https://www.youtube.com/@Real420Joker" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ic" aria-hidden="true"><use href="#i-youtube"/></svg></a><a class="rv" style="--r:5" href="https://www.twitch.tv/LeJoker3251" target="_blank" rel="noopener" aria-label="Twitch"><svg class="ic" aria-hidden="true"><use href="#i-twitch"/></svg></a><a class="rv" style="--r:6" href="https://discord.gg/5wPdtbftAr" target="_blank" rel="noopener" aria-label="Discord"><svg class="ic" aria-hidden="true"><use href="#i-discord"/></svg></a></div>
+      <div class="pill rv" style="--r:8">Fortnite Creator-Code <b>420 Joker</b></div>
     </div>
   </div>
 </section>
@@ -294,7 +318,9 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
   <div class="wrap">
     <h2>Stream-<em>Plan.</em></h2>
     <!-- Dieser Bereich erscheint automatisch, sobald in live.json ein "plan" eingetragen ist. -->
-    <div class="plan" id="plan"><div class="soon"><b>Coming soon</b><span>Die ersten Termine folgen. Folge mir auf Twitch, dann verpasst du nichts.</span></div></div>
+    <div class="cd" id="cd" hidden><span>Nächster Stream in</span><b id="cdv"></b><small id="cdt"></small></div>
+    <div class="plan" id="plan"><div class="soon rv2" style="--dx:-48px"><b>Coming soon</b><span>Die ersten Termine folgen. Folge mir auf Twitch, dann verpasst du nichts.</span></div></div>
+    <p class="tz" id="tz" hidden>Alle Zeiten in deutscher Zeit.</p>
   </div>
 </section>
 
@@ -477,12 +503,13 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
   }
   function renderPlan(a){
     var box=d.getElementById("plan");box.textContent="";d.getElementById("streams").hidden=false;d.getElementById("navStreams").hidden=false;
-    a.slice(0,5).forEach(function(p){
+    d.getElementById("tz").hidden=false;startCountdown(a);
+    a.slice(0,5).forEach(function(p,ix){
       var ch=d.querySelector('[data-ch="'+p.platform+'"]'),l=d.createElement("a");
-      l.className="slot";l.href=ch?ch.href:"#";l.target="_blank";l.rel="noopener";
+      l.className="slot rv2";l.style.setProperty("--dx",(ix%2?48:-48)+"px");l.style.setProperty("--td",(ix*.1)+"s");l.href=ch?ch.href:"#";l.target="_blank";l.rel="noopener";
       var w=d.createElement("div");w.className="when";var b=d.createElement("b");b.textContent=p.day||"";var s=d.createElement("span");s.textContent=p.time||"";w.append(b,s);
       var h=d.createElement("div");h.className="what";var h3=d.createElement("h3");h3.textContent=p.title||"";var pp=d.createElement("p");pp.textContent="Auf "+(NAMES[p.platform]||"");h.append(h3,pp);
-      var g=d.createElement("span");g.className="go";g.textContent="Zuschauen";l.append(w,h,g);box.appendChild(l);
+      var g=d.createElement("span");g.className="go";g.textContent="Zuschauen";l.append(w,h,g);box.appendChild(l);rev(l);
     });
   }
   checkLive();setInterval(checkLive,60000);
@@ -517,7 +544,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
   addEventListener("resize",setAH);
   var MINSTAT=100,SL={tiktok:"Follower auf TikTok",youtube:"Abonnenten auf YouTube",twitch:"Follower auf Twitch"};
   function renderStats(s){
-    var row=d.getElementById("statrow");row.textContent="";if(!s)return;
+    var row=d.getElementById("statrow");row.textContent="";var pf=d.getElementById("proof");pf.hidden=!(s&&+s.tiktok>=MINSTAT);if(!pf.hidden)d.getElementById("pv").textContent=NF.format(+s.tiktok);if(!s)return;
     Object.keys(SL).forEach(function(k){var n=+s[k];if(!(n>=MINSTAT))return;
       var w=d.createElement("div"),b=d.createElement("b"),sp=d.createElement("span");b.textContent=NF.format(n);b.dataset.n=n;sp.textContent=SL[k];w.append(b,sp);row.appendChild(w)});
     if(still||!("IntersectionObserver" in window))return;
@@ -526,13 +553,58 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
     io.observe(row);
   }
   [].forEach.call(d.querySelectorAll("[data-mail]"),function(a){a.href="mailto:"+["420joker","gmail.com"].join("@")+"?subject="+encodeURIComponent("Anfrage 420 Joker")});
+  /* BEWEGUNG: Headline, Fortschritt, Laufband, Reveal, Countdown, Text-Reveal */
+  var hero=d.querySelector(".hero"),h1=d.querySelector("h1");
+  function splitCh(node,st){
+    [].slice.call(node.childNodes).forEach(function(n){
+      if(n.nodeType===3){var f=d.createDocumentFragment();n.textContent.split(/(\s+)/).forEach(function(tk){
+        if(!tk)return;if(/^\s+$/.test(tk)){f.appendChild(d.createTextNode(" "));return}
+        var w=d.createElement("span");w.className="w";w.setAttribute("aria-hidden","true");
+        tk.split("").forEach(function(c){var s=d.createElement("span");s.className="ch";s.style.setProperty("--i",st.i++);s.textContent=c;w.appendChild(s)});f.appendChild(w)});
+        n.parentNode.replaceChild(f,n)}
+      else if(n.nodeType===1&&n.tagName!=="BR")splitCh(n,st);
+    });
+  }
+  if(!still&&h1){h1.setAttribute("aria-label",h1.innerHTML.replace(/<br\s*\/?>/gi," ").replace(/<[^>]+>/g,"").replace(/\s+/g," ").trim());splitCh(h1,{i:0})}
+  var rio="IntersectionObserver" in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");rio.unobserve(e.target)}})},{threshold:.15}):null;
+  function rev(el){if(rio)rio.observe(el);else el.classList.add("in")}
+  [].forEach.call(d.querySelectorAll(".rv2"),rev);
+  var wordsP=[].slice.call(d.querySelectorAll(".about p")).map(function(p){
+    var ws=p.textContent.trim().split(/\s+/);p.textContent="";
+    return ws.map(function(w,i){var s=d.createElement("span");s.className="wd"+(still?" on":"");s.textContent=w;p.appendChild(s);if(i<ws.length-1)p.appendChild(d.createTextNode(" "));return s})});
+  var prog=d.getElementById("prog"),track=d.querySelector(".track"),mq=track&&track.getAnimations&&track.getAnimations()[0],lastY=scrollY,rate=1,dir=1,tk=false;
+  function onScroll(){
+    var y=scrollY,vh=innerHeight,dh=Math.max(1,root.scrollHeight-vh);
+    prog.style.setProperty("--p",Math.min(1,y/dh));
+    if(!still){
+      wordsP.forEach(function(ws){if(!ws.length)return;var r=ws[0].parentNode.getBoundingClientRect(),p=Math.max(0,Math.min(1,(vh*.9-r.top)/(r.height+vh*.2))),n=Math.round(p*ws.length);ws.forEach(function(s,i){s.classList.toggle("on",i<n)})});
+    }
+  }
+  function frameM(){
+    var y=scrollY,dv=y-lastY;lastY=y;if(Math.abs(dv)>2)dir=dv>0?1:-1;
+    var target=dir*(1+Math.min(9,Math.abs(dv)/5));rate+=(target-rate)*.08;
+    if(mq&&mq.playbackRate!==undefined)mq.playbackRate=rate;requestAnimationFrame(frameM);
+  }
+  addEventListener("scroll",function(){if(tk)return;tk=true;requestAnimationFrame(function(){tk=false;onScroll()})},{passive:true});
+  addEventListener("resize",onScroll);onScroll();if(!still&&mq)requestAnimationFrame(frameM);
+  var DAYS={mo:0,di:1,mi:2,"do":3,fr:4,sa:5,so:6},WK=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],cdTimer=0;
+  function bNow(){var o={};new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Berlin",weekday:"short",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"}).formatToParts(new Date()).forEach(function(x){o[x.type]=x.value});return WK.indexOf(o.weekday)*86400+(+o.hour)*3600+(+o.minute)*60+(+o.second)}
+  function nextStream(pl){var now=bNow(),best=null;pl.forEach(function(p){var di=DAYS[(p.day||"").toLowerCase().slice(0,2)],tm=(p.time||"").split(":");if(di==null||tm.length<2)return;var s=di*86400+(+tm[0])*3600+(+tm[1])*60,dl=(s-now+604800)%604800;if(!best||dl<best.dl)best={dl:dl,p:p}});return best}
+  function pad(n){return n<10?"0"+n:""+n}
+  function startCountdown(pl){
+    var box=d.getElementById("cd"),v=d.getElementById("cdv"),tt=d.getElementById("cdt");clearInterval(cdTimer);
+    function tick(){var b=nextStream(pl);if(!b){box.hidden=true;return}box.hidden=false;var s=b.dl,dd=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),sc=s%60;
+      v.textContent=s<60?"Gleich geht's los":(dd?dd+" T ":"")+pad(h)+" Std "+pad(m)+" Min "+pad(sc)+" Sek";tt.textContent=b.p.title+" · "+b.p.day+" "+b.p.time+" Uhr"}
+    tick();cdTimer=setInterval(tick,1000);
+  }
   var iv=d.getElementById("intro");
-  function endIntro(){if(iv){iv.remove();iv=null}}
-  if(still)endIntro();else{setTimeout(endIntro,4400);iv.addEventListener("click",endIntro)}
+  function endIntro(){if(iv){iv.remove();iv=null}if(!window.__introDone){window.__introDone=1;window.dispatchEvent(new Event("jokerIntroDone"))}}
+  function go(){hero.classList.add("go")}
+  if(still){endIntro();go()}else{setTimeout(go,3500);setTimeout(endIntro,4400);iv.addEventListener("click",function(){endIntro();go()})}
 })();
 </script>
 <script>
-addEventListener("load",function(){(window.requestIdleCallback||setTimeout)(function(){
+function startGL(){(window.requestIdleCallback||setTimeout)(function(){
 var cv=document.getElementById("gl");if(!cv)return;
 var gl=cv.getContext("webgl",{alpha:true,premultipliedAlpha:true,antialias:true});
 if(!gl){cv.remove();return}
@@ -665,8 +737,10 @@ function frame(now){
    if(cnt===70){var avg=acc/cnt;acc=0;cnt=0;if(avg>26){Q--;size();}}}}}
  last=now;requestAnimationFrame(frame)}
 function req(){if(!still||pend)return;pend=1;requestAnimationFrame(function(now){pend=0;draw(now)})}
+requestAnimationFrame(function(){cv.classList.add("on")});
 if(!still)requestAnimationFrame(frame);
-},{timeout:1200})});
+},{timeout:1200})}
+if(window.__introDone)startGL();else addEventListener("jokerIntroDone",startGL,{once:true});
 </script>
 </body>
 </html>
