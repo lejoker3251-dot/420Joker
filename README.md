@@ -12,6 +12,7 @@ Statische Seite ohne Build-Schritt, läuft direkt auf GitHub Pages: https://lejo
 - `og-image.jpg`, `apple-touch-icon.png` – Vorschaubild für geteilte Links und App-Symbol
 - `404.html`, `sitemap.xml` – Fehlerseite und Suchmaschinen-Angabe
 - `thumb-*.webp` – Bilder der drei Kanal-Kacheln
+- `wallpaper-*.jpg` – Handy-Hintergründe als Belohnung im Spiel
 - `karte-*.webp`, `AgentOrange.woff` – Bilder und Schrift
 - optional: `hero.mp4` – kurzer, stummer Loop (5 bis 8 Sekunden) für den Hero
 
@@ -28,6 +29,14 @@ Statische Seite ohne Build-Schritt, läuft direkt auf GitHub Pages: https://lejo
 ```
 - Der Banner erscheint oben. Mit `"banner": {}` oder leerem Text verschwindet er.
 - Zahlen unter 100 zeigt die Seite nicht an. Trage sie trotzdem ein, sie erscheinen von selbst, sobald sie die Schwelle erreichen.
+
+## Wochen-Challenge und Shop-Link (`live.json`)
+```json
+"challenge": { "title": "Diese Woche: 10 Siege", "current": 4, "goal": 10 },
+"shopUrl": "https://www.fortnite.com/item-shop/offers/..."
+```
+- Die Challenge erscheint im Community-Band mit Fortschrittsbalken. Ohne `challenge` bleibt sie unsichtbar.
+- `shopUrl` ist der Epic-Shop-Link mit deinem Code (Fortnite.com, Item-Shop, Teilen-Symbol). Nur Adressen von fortnite.com werden akzeptiert.
 
 ## Stream-Plan (`live.json`)
 ```json

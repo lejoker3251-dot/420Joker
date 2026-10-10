@@ -138,6 +138,75 @@ footer a{display:inline-flex;align-items:center;gap:7px}
 .proof b{color:var(--ink);font-weight:600}
 .js .wd{opacity:.22;transition:opacity .3s}
 .js .wd.on{opacity:1}
+.ad{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--mute);margin-right:8px;vertical-align:middle;line-height:1.5}
+.code .btns2{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}
+.code .btns2 .btn,.code .btns2 button{margin-top:0}
+.code .note{font-size:13px;margin-top:16px}
+.code .adline{margin-bottom:6px}
+.code button.alt{background:none;color:var(--ink);border:1px solid var(--line)}
+.code button.alt:hover{background:var(--ink);color:#0a0710}
+.js .rv2{transform:translate(var(--dx,-40px),var(--dy,0px))}
+.thumb svg{animation:ring 2.6s ease-out infinite}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(255,255,255,.4)}80%,100%{box-shadow:0 0 0 20px rgba(255,255,255,0)}}
+.comm .btn{position:relative}
+.comm .btn::before{content:"";position:absolute;inset:0;border-radius:99px;border:2px solid var(--acc);pointer-events:none;animation:wave 2.6s ease-out infinite}
+@keyframes wave{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(1.28,1.7)}}
+.hand .pc:nth-child(1){--k:0}.hand .pc:nth-child(2){--k:1}.hand .pc:nth-child(3){--k:2}.hand .pc:nth-child(4){--k:3}.hand .pc:nth-child(5){--k:4}
+.js .hand:not(.dealt) .pc{opacity:0}
+.hand.dealt .pc{animation:dealIn .95s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--k)*110ms)}
+@keyframes dealIn{from{opacity:0;transform:translate(calc((2 - var(--k))*95%),60px) rotate(calc((var(--k) - 2)*-16deg)) scale(.7)}}
+.code .big{animation:breathe 4.5s ease-in-out infinite}
+@keyframes breathe{50%{text-shadow:0 0 110px var(--glow),0 0 26px var(--acc)}}
+footer .ic{transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+footer a:hover .ic,footer a:focus-visible .ic{transform:translateY(-3px) rotate(-10deg) scale(1.22)}
+.chal{max-width:520px;margin:30px auto 0;text-align:left}
+.chtop{display:flex;justify-content:space-between;gap:12px;font-size:15px;margin-bottom:10px}
+.chtop b{font-weight:600}.chtop span{color:var(--mute);font-variant-numeric:tabular-nums}
+.chbar{height:12px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
+.chbar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#7c3aed,#c79bff);box-shadow:0 0 18px var(--glow);transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+.albbar{display:flex;justify-content:center;flex-wrap:wrap;gap:20px 52px;margin:6px 0 34px;text-align:center}
+.albbar b{display:block;font:400 clamp(38px,8vw,60px)/1 var(--serif);color:var(--acc)}
+.albbar span{color:var(--mute);font-size:14px}
+.albgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(min-width:760px){.albgrid{grid-template-columns:repeat(6,1fr);gap:18px}}
+.slot2{position:relative;aspect-ratio:2/3;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,.04);display:grid;place-items:center}
+.slot2 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slot2.txt{background:#f4f0fb;color:#14101f;font:400 clamp(28px,6vw,44px) var(--serif)}.slot2.txt.red{color:#c0283a}
+.slot2.lock{color:var(--mute);font:italic 40px var(--serif)}
+.slot2 em{position:absolute;right:6px;top:6px;z-index:1;font:600 12px var(--sans);font-style:normal;background:rgba(5,3,9,.75);padding:2px 8px;border-radius:99px}
+.slotc{text-align:center;margin-top:8px;font-size:13px;color:var(--mute);line-height:1.35}
+.slotc b{display:block;color:var(--ink);font-weight:600;font-size:14px}
+.r-l{--rc:#ffcf5c}.r-e{--rc:#b57cff}.r-s{--rc:#6aa7ff}.r-g{--rc:#9a93ad}
+.slotc i{font-style:normal;color:var(--rc)}
+.slot2.got{box-shadow:0 0 22px -4px var(--rc),0 0 0 1px var(--rc)}
+.alact{text-align:center;margin-top:36px}
+.alact small{display:block;margin-top:12px;color:var(--mute);font-size:14px}
+.alact .btn[disabled]{opacity:.45;pointer-events:none}
+.alact .btn{border:0;cursor:pointer;font:inherit;font-weight:600}
+.rewards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:64px}
+@media(min-width:760px){.rewards{grid-template-columns:repeat(4,1fr)}}
+.rw{position:relative;display:block;text-align:center;color:var(--mute);font-size:13px}
+.rw .im{position:relative;aspect-ratio:9/16;border-radius:12px;overflow:hidden;border:1px solid var(--line);margin-bottom:8px}
+.rw img{width:100%;height:100%;object-fit:cover;filter:blur(14px) brightness(.5)}
+.rw.ok img{filter:none}
+.rw.ok .im{box-shadow:0 0 24px -6px var(--acc)}
+.rw .lk{position:absolute;inset:0;display:grid;place-items:center;font-size:34px}
+.rw b{display:block;color:var(--ink);font-weight:600;font-size:14px}
+.rw.ok:hover .im{transform:translateY(-4px);transition:transform .25s}
+.shr{margin-top:14px;background:none;border:1px solid var(--line);color:var(--ink);border-radius:99px;padding:10px 22px;font:inherit;font-size:14px;cursor:pointer}
+.shr:hover{background:var(--ink);color:#0a0710}
+.pull{position:fixed;inset:0;z-index:90;background:rgba(5,3,9,.9);backdrop-filter:blur(10px);display:grid;place-items:center;text-align:center;cursor:pointer;padding:24px}
+.pkwrap{perspective:900px}
+.pk{width:min(62vw,250px);aspect-ratio:2/3;position:relative;margin:0 auto;transform-style:preserve-3d;animation:pkflip 1.5s .3s cubic-bezier(.3,.7,.2,1) both}
+@keyframes pkflip{0%{opacity:0;transform:translateY(40px) rotateY(0) scale(.9)}25%{opacity:1;transform:rotateY(0)}100%{opacity:1;transform:rotateY(180deg) scale(1)}}
+.pk span{position:absolute;inset:0;border-radius:14px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.pkb{background:linear-gradient(160deg,#1c1033,#0a0614);box-shadow:inset 0 0 0 1px var(--line),inset 0 0 0 8px #0a0614,inset 0 0 0 9px rgba(181,124,255,.5);display:grid;place-items:center;font:italic 64px var(--serif);color:var(--acc)}
+.pkf{transform:rotateY(180deg);display:grid;place-items:center;box-shadow:0 0 60px var(--rc,#b57cff)}
+.pkf img{width:100%;height:100%;object-fit:cover}
+.pkf.txt{background:#f4f0fb;color:#14101f;font:400 70px var(--serif)}.pkf.txt.red{color:#c0283a}
+.pkn{margin-top:30px;font:italic 30px var(--serif);animation:in 1s 1.7s both}
+.pkn small{display:block;font:14px var(--sans);color:var(--mute);margin-top:8px}
+@media(prefers-reduced-motion:reduce){.pk{transform:rotateY(180deg)}}
 .soon{padding:44px 0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px 32px;align-items:center}
 .soon b{font:400 clamp(34px,6vw,54px)/1 var(--serif);color:var(--acc)}
 .soon span{color:var(--mute);max-width:42ch}
@@ -278,7 +347,8 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
 <div id="intro" role="presentation"><div class="full"></div><small>Tippen zum Überspringen</small></div>
 <a class="livebar" id="livebar" hidden target="_blank" rel="noopener"><i class="dot"></i><b>Live auf <span id="lbn" style="color:var(--ink)"></span></b><span>Jetzt zuschauen</span></a>
 <a class="skip" href="#bereiche">Zum Inhalt</a>
-<div class="bg" id="bg" aria-hidden="true"></div><div class="spot" aria-hidden="true"></div><canvas id="gl" aria-hidden="true"></canvas><div id="cardhint" aria-hidden="true">Karte antippen</div>
+<div class="bg" id="bg" aria-hidden="true"></div><div class="pull" id="pull" hidden role="dialog" aria-label="Neue Karte"><div><div class="pkwrap"><div class="pk"><span class="pkb">&spades;</span><span class="pkf" id="pkf"></span></div></div><p class="pkn" id="pkn"></p></div></div>
+<div class="spot" aria-hidden="true"></div><canvas id="gl" aria-hidden="true"></canvas><div id="cardhint" aria-hidden="true">Karte antippen</div>
 <header id="top">
   <div id="prog" aria-hidden="true"></div>
   <div class="ann" id="ann" hidden><span id="annText"></span><button type="button" id="annX" aria-label="Hinweis schließen">&times;</button></div>
@@ -307,7 +377,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
       </div>
       <div class="proof rv" id="proof" style="--r:2" hidden><svg class="ic" aria-hidden="true"><use href="#i-tiktok"/></svg><span><b id="pv"></b> Follower auf TikTok</span></div>
       <div class="soc" role="group" aria-label="Meine Kanäle"><a class="rv" style="--r:3" href="https://www.tiktok.com/@greengrowseeds" target="_blank" rel="noopener" aria-label="TikTok"><svg class="ic" aria-hidden="true"><use href="#i-tiktok"/></svg></a><a class="rv" style="--r:4" href="https://www.youtube.com/@Real420Joker" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ic" aria-hidden="true"><use href="#i-youtube"/></svg></a><a class="rv" style="--r:5" href="https://www.twitch.tv/LeJoker3251" target="_blank" rel="noopener" aria-label="Twitch"><svg class="ic" aria-hidden="true"><use href="#i-twitch"/></svg></a><a class="rv" style="--r:6" href="https://discord.gg/5wPdtbftAr" target="_blank" rel="noopener" aria-label="Discord"><svg class="ic" aria-hidden="true"><use href="#i-discord"/></svg></a></div>
-      <div class="pill rv" style="--r:8">Fortnite Creator-Code <b>420 Joker</b></div>
+      <div class="pill rv" style="--r:8"><span class="ad">Werbung</span>Fortnite Creator-Code <b>420 Joker</b></div>
     </div>
   </div>
 </section>
@@ -351,9 +421,9 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
     <h2>Folge dem <em>Joker.</em></h2>
     <!-- Wird durch clips.json ersetzt, sobald dort Clips eingetragen sind. -->
     <div class="tiles" id="tiles">
-      <a class="tile" href="https://www.youtube.com/@Real420Joker" target="_blank" rel="noopener"><div class="thumb"><img src="thumb-youtube.webp" alt="" loading="lazy"><span class="badge"><svg class="ic" aria-hidden="true"><use href="#i-youtube"/></svg>YouTube</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><h3>Auf YouTube</h3><p>Videos und Highlights</p></a>
-      <a class="tile" href="https://www.twitch.tv/LeJoker3251" target="_blank" rel="noopener"><div class="thumb"><img src="thumb-twitch.webp" alt="" loading="lazy"><span class="badge"><svg class="ic" aria-hidden="true"><use href="#i-twitch"/></svg>Twitch</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><h3>Auf Twitch</h3><p>Live-Streams und Gaming</p></a>
-      <a class="tile" href="https://www.tiktok.com/@greengrowseeds" target="_blank" rel="noopener"><div class="thumb"><img src="thumb-tiktok.webp" alt="" loading="lazy"><span class="badge"><svg class="ic" aria-hidden="true"><use href="#i-tiktok"/></svg>TikTok</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><h3>Auf TikTok</h3><p>Kurze Clips</p></a>
+      <a class="tile rv2" style="--dx:0px;--dy:44px;--td:0.00s" href="https://www.youtube.com/@Real420Joker" target="_blank" rel="noopener"><div class="thumb"><img src="thumb-youtube.webp" alt="" loading="lazy"><span class="badge"><svg class="ic" aria-hidden="true"><use href="#i-youtube"/></svg>YouTube</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><h3>Auf YouTube</h3><p>Videos und Highlights</p></a>
+      <a class="tile rv2" style="--dx:0px;--dy:44px;--td:0.14s" href="https://www.twitch.tv/LeJoker3251" target="_blank" rel="noopener"><div class="thumb"><img src="thumb-twitch.webp" alt="" loading="lazy"><span class="badge"><svg class="ic" aria-hidden="true"><use href="#i-twitch"/></svg>Twitch</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><h3>Auf Twitch</h3><p>Live-Streams und Gaming</p></a>
+      <a class="tile rv2" style="--dx:0px;--dy:44px;--td:0.28s" href="https://www.tiktok.com/@greengrowseeds" target="_blank" rel="noopener"><div class="thumb"><img src="thumb-tiktok.webp" alt="" loading="lazy"><span class="badge"><svg class="ic" aria-hidden="true"><use href="#i-tiktok"/></svg>TikTok</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><h3>Auf TikTok</h3><p>Kurze Clips</p></a>
     </div>
   </div>
 </section>
@@ -364,6 +434,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
       <h2>Komm in die <em>Community.</em></h2>
       <p>Zock mit mir und den anderen, verpasse keinen Stream und sag mir, was du als Nächstes sehen willst.</p>
       <div class="statrow" id="statrow"></div>
+      <div class="chal" id="chal" hidden><div class="chtop"><b id="chT"></b><span id="chV"></span></div><div class="chbar"><i id="chF"></i></div></div>
       <a class="btn" href="https://discord.gg/5wPdtbftAr" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-discord"/></svg>Discord beitreten</a>
     </div>
   </div>
@@ -385,14 +456,26 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
   </div>
 </section>
 
+<section id="album">
+  <div class="wrap">
+    <h2>Dein <em>Album.</em></h2>
+    <div class="albbar"><div><b id="alStreak">0</b><span>Tage in Folge</span></div><div><b id="alCount">0/6</b><span>Karten gesammelt</span></div><div><b id="alShield">0</b><span>Schutz-Joker</span></div></div>
+    <div class="albgrid" id="albgrid"></div>
+    <div class="alact"><button class="btn" id="alClaim" type="button">Tageskarte holen</button><small id="alNote">Komm jeden Tag wieder und sammle alle sechs Karten.</small></div>
+    <div class="rewards" id="rewards"></div>
+  </div>
+</section>
+
 <section id="creator-code">
   <div class="wrap">
     <div class="code">
-      <p>Du spielst Fortnite? Gib im Item-Shop beim Kauf meinen Creator-Code ein und unterstütze mich, ohne dass es dich etwas extra kostet.</p>
+      <p class="adline"><span class="ad">Werbung</span>Ich bin Teil des Epic-Programms Support-A-Creator und erhalte eine Vergütung, wenn du meinen Code nutzt.</p>
+      <p>Du spielst Fortnite? Unterstütze mich beim Einkauf im Item-Shop, ohne dass es dich etwas extra kostet.</p>
       <div class="big" id="codeText">420 Joker</div>
       <p>Fortnite Support-a-Creator</p>
-      <div class="steps"><div><b>1</b>Fortnite starten und den Item-Shop öffnen.</div><div><b>2</b>Als Creator-Code <span style="color:var(--ink)">420 Joker</span> eintragen.</div><div><b>3</b>Wie gewohnt einkaufen. Du unterstützt mich damit.</div></div>
-      <button type="button" id="copy">Code kopieren</button>
+      <div class="steps"><div class="rv2" style="--dx:0px;--dy:28px;--td:0s"><b>1</b>Fortnite starten und den Shop-Tab öffnen.</div><div class="rv2" style="--dx:0px;--dy:28px;--td:.15s"><b>2</b>Unten auf <span style="color:var(--ink)">Support-A-Creator</span> tippen und den Code <span style="color:var(--ink)">420 Joker</span> eingeben.</div><div class="rv2" style="--dx:0px;--dy:28px;--td:.3s"><b>3</b>Auf Suchen tippen, den Haken abwarten und wie gewohnt einkaufen.</div></div>
+      <div class="btns2"><a class="btn" id="shopBtn" href="https://www.fortnite.com/item-shop/offers/dollie-136af966" target="_blank" rel="noopener">Direkt im Shop unterstützen</a><button type="button" id="copy" class="alt">Code kopieren</button></div>
+      <p class="note">Im Web geht es auch im Item-Shop auf Fortnite.com: Banner mit dem Stern anklicken und den Code eintragen. Steht der Code nach dem Klick nicht automatisch dort, trag <b>420 Joker</b> einfach selbst bei Support-A-Creator ein.</p>
     </div>
   </div>
 </section>
@@ -408,12 +491,12 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
   </div>
 </section>
 </main>
-<button class="fab" id="fab" type="button" aria-label="Creator-Code 420 Joker kopieren">Code <b>420 Joker</b> kopieren</button>
+<button class="fab" id="fab" type="button" aria-label="Werbung: Creator-Code 420 Joker kopieren"><span class="ad">Werbung</span>Code <b>420 Joker</b> kopieren</button>
 
 <footer>
   <div class="wrap">
     <div><a href="https://www.tiktok.com/@greengrowseeds" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-tiktok"/></svg>TikTok</a><a href="https://www.youtube.com/@Real420Joker" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-youtube"/></svg>YouTube</a><a href="https://discord.gg/5wPdtbftAr" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-discord"/></svg>Discord</a><a href="https://www.twitch.tv/LeJoker3251" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-twitch"/></svg>Twitch</a></div>
-        <div><a href="#" data-mail><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Kontakt</a><a href="#ziehen">Joker ziehen</a><a href="#ueber-mich">Über mich</a><a href="#">Nach oben</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>© 2026 420 Joker</div>
+        <div><a href="#" data-mail><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Kontakt</a><a href="#ziehen">Joker ziehen</a><a href="#album">Album</a><a href="#ueber-mich">Über mich</a><a href="#">Nach oben</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>© 2026 420 Joker</div>
   </div>
 </footer>
 
@@ -428,7 +511,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
   }
   var cb=d.getElementById("copy"),fab=d.getElementById("fab"),inCode=false;
   cb.addEventListener("click",function(){copyText("420 Joker",function(){cb.textContent="Kopiert";setTimeout(function(){cb.textContent="Code kopieren"},2000)})});
-  fab.addEventListener("click",function(){copyText("420 Joker",function(){fab.textContent="Kopiert";setTimeout(function(){fab.innerHTML="Code <b>420 Joker</b> kopieren"},2000)})});
+  fab.addEventListener("click",function(){copyText("420 Joker",function(){fab.textContent="Kopiert";setTimeout(function(){fab.innerHTML='<span class="ad">Werbung</span>Code <b>420 Joker</b> kopieren'},2000)})});
   function fabState(){fab.classList.toggle("on",scrollY>520&&!inCode)}
   if("IntersectionObserver" in window)new IntersectionObserver(function(e){inCode=e[0].isIntersecting;fabState()}).observe(d.getElementById("creator-code"));
   addEventListener("scroll",function(){hdr.classList.toggle("solid",scrollY>40);fabState()},{passive:true});
@@ -458,6 +541,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
   }
   var hand=[].slice.call(d.querySelectorAll(".pc")),say=d.getElementById("say"),j=0,done=false;
   function deal(){
+    var he=d.getElementById("hand");if(he.classList.contains("dealt")){he.classList.remove("dealt");void he.offsetWidth;he.classList.add("dealt")}
     var W={i:CARDS.l,a:"Joker in Lila"},
         items=[{t:"A♠"},{i:CARDS.d,a:"Dame in Lila"},{i:CARDS.r,a:"Joker in Rot"},{i:CARDS.r2,a:"Dame in Rot"}].sort(function(){return Math.random()-.5});
     j=Math.floor(Math.random()*hand.length);done=false;
@@ -479,15 +563,16 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
     var kind=c.dataset.kind;S.n++;if(kind==="joker")S.j++;if(kind==="dame")S.b++;show();
     hand.forEach(function(o,k){if(o!==c)setTimeout(function(){o.classList.add("up")},750+k*120)});
     setTimeout(function(){
-      var m={joker:'<b>Treffer. Du hast den Joker gezogen.</b><br>Hol dir deinen Code: <a href="#creator-code" style="border-bottom:1px solid var(--line)">420 Joker</a>',
+      var m={joker:'<b>Treffer. Du hast den Joker gezogen.</b><br>Hol dir deinen Code: <a href="#creator-code" style="border-bottom:1px solid var(--line)">420 Joker</a><br><button type="button" class="shr" id="shareImg">Als Bild teilen</button>',
         dame:'<b>Bonus-Karte. '+(c.dataset.name||"Die Dame")+'.</b><br>Das ist kein Treffer, aber ein Bonus-Punkt für dich.',
         other:'<b>Knapp daneben.</b><br>Der lila Joker war eine andere Karte.'};
       if(kind==="joker")burst(c,"#c79bff");if(kind==="dame")burst(c,"#ff5a68");
       say.innerHTML=m[kind]+'<br><button type="button" id="again">Neu mischen</button>';
-      d.getElementById("again").addEventListener("click",deal);
+      d.getElementById("again").addEventListener("click",deal);var si=d.getElementById("shareImg");if(si)si.addEventListener("click",shareImage);
     },1000);
   })});
   show();
+  deal();
   /* LIVE-STATUS: manueller Schalter über die Datei live.json (z. B. {"twitch":true,"youtube":false,"tiktok":false}). */
   var NAMES={tiktok:"TikTok",twitch:"Twitch",youtube:"YouTube"},live={};
   var bar=d.getElementById("livebar");
@@ -499,7 +584,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
   }
   function checkLive(){
     fetch("live.json?t="+Math.floor(Date.now()/60000),{cache:"no-store"}).then(function(r){return r.ok?r.json():null})
-      .then(function(o){if(o&&o.plan&&o.plan.length)renderPlan(o.plan);if(o){showBanner(o.banner);renderStats(o.stats)}if(o)Object.keys(NAMES).forEach(function(k){if(k in o)setLive(k,!!o[k])})}).catch(function(){});
+      .then(function(o){if(o&&o.plan&&o.plan.length)renderPlan(o.plan);if(o){showBanner(o.banner);renderStats(o.stats);renderChallenge(o.challenge);if(o.shopUrl&&/^https:\/\/(www\.)?fortnite\.com\//.test(o.shopUrl))d.getElementById("shopBtn").href=o.shopUrl}if(o)Object.keys(NAMES).forEach(function(k){if(k in o)setLive(k,!!o[k])})}).catch(function(){});
   }
   function renderPlan(a){
     var box=d.getElementById("plan");box.textContent="";d.getElementById("streams").hidden=false;d.getElementById("navStreams").hidden=false;
@@ -520,13 +605,13 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
   var PLAY='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
   function renderClips(a){
     var box=d.getElementById("tiles");box.textContent="";
-    a.slice(0,6).forEach(function(c){
-      var l=d.createElement("a");l.className="tile";l.href=/^https:\/\//.test(c.url||"")?c.url:"#";l.target="_blank";l.rel="noopener";
+    a.slice(0,6).forEach(function(c,ix){
+      var l=d.createElement("a");l.className="tile rv2";l.style.setProperty("--dx","0px");l.style.setProperty("--dy","44px");l.style.setProperty("--td",(ix*.12)+"s");l.href=/^https:\/\//.test(c.url||"")?c.url:"#";l.target="_blank";l.rel="noopener";
       var th=d.createElement("div");th.className="thumb";
       if(c.thumb){var im=new Image();im.src=c.thumb;im.alt="";im.loading="lazy";th.appendChild(im)}
       th.insertAdjacentHTML("beforeend",PLAY);
       var h=d.createElement("h3");h.textContent=c.title||"";var p=d.createElement("p");p.textContent="Auf "+(NAMES[c.platform]||c.platform||"");
-      l.append(th,h,p);box.appendChild(l);
+      l.append(th,h,p);box.appendChild(l);rev(l);
     });
   }
   fetch("clips.json",{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).then(function(a){if(a&&a.length)renderClips(a)}).catch(function(){});
@@ -553,6 +638,84 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
     io.observe(row);
   }
   [].forEach.call(d.querySelectorAll("[data-mail]"),function(a){a.href="mailto:"+["420joker","gmail.com"].join("@")+"?subject="+encodeURIComponent("Anfrage 420 Joker")});
+  /* ALBUM, BELOHNUNGEN, CHALLENGE, SHARE, SHOP */
+  var CSET=[{id:"jl",n:"Joker in Lila",r:"Legendär",c:"l",w:8,img:CARDS.l},{id:"jr",n:"Joker in Rot",r:"Episch",c:"e",w:14,img:CARDS.r},{id:"dl",n:"Dame in Lila",r:"Selten",c:"s",w:20,img:CARDS.d},{id:"dr",n:"Dame in Rot",r:"Selten",c:"s",w:20,img:CARDS.r2},{id:"as",n:"Pik-Ass",r:"Gewöhnlich",c:"g",w:19,t:"A\u2660"},{id:"kh",n:"Herz-König",r:"Gewöhnlich",c:"g",w:19,t:"K\u2665",red:1}];
+  var AL={cards:{},streak:0,last:"",shield:0,best:0};
+  try{var _a=JSON.parse(localStorage.getItem("jokerAlbum"));if(_a&&_a.cards)AL={cards:_a.cards,streak:+_a.streak||0,last:_a.last||"",shield:+_a.shield||0,best:+_a.best||0}}catch(e){}
+  function saveAL(){try{localStorage.setItem("jokerAlbum",JSON.stringify(AL))}catch(e){}}
+  function dk(x){return x.getFullYear()+"-"+pad(x.getMonth()+1)+"-"+pad(x.getDate())}
+  function dnum(s){var p=s.split("-");return Math.round(Date.UTC(+p[0],+p[1]-1,+p[2])/864e5)}
+  function slotEl(c,got,cnt){
+    var s=d.createElement("div"),box=d.createElement("div");box.className="slot2 r-"+c.c+(got?" got":" lock");
+    if(got){if(c.img){var im=new Image();im.src=c.img;im.alt=c.n;box.appendChild(im)}else{box.classList.add("txt");if(c.red)box.classList.add("red");box.textContent=c.t}
+      if(cnt>1){var e=d.createElement("em");e.textContent="\u00d7"+cnt;box.appendChild(e)}}else box.textContent="?";
+    var cap=d.createElement("div");cap.className="slotc r-"+c.c;var b=d.createElement("b");b.textContent=got?c.n:"Noch nicht gefunden";var i=d.createElement("i");i.textContent=c.r;cap.append(b,i);s.append(box,cap);return s}
+  function renderAL(){
+    var g=d.getElementById("albgrid");g.textContent="";var n=0;
+    CSET.forEach(function(c){var k=+AL.cards[c.id]||0;if(k)n++;g.appendChild(slotEl(c,k>0,k))});
+    d.getElementById("alStreak").textContent=AL.streak;d.getElementById("alCount").textContent=n+"/"+CSET.length;d.getElementById("alShield").textContent=AL.shield;
+    var btn=d.getElementById("alClaim"),note=d.getElementById("alNote"),done=AL.last===dk(new Date());
+    btn.disabled=done;btn.textContent=done?"Heute schon geholt":"Tageskarte holen";
+    clearInterval(alTimer);
+    if(done){function tk(){var t=new Date(),m=new Date(t.getFullYear(),t.getMonth(),t.getDate()+1),s=Math.max(0,Math.floor((m-t)/1000));
+      note.textContent="Nächste Karte in "+pad(Math.floor(s/3600))+":"+pad(Math.floor(s%3600/60))+":"+pad(s%60);if(AL.last!==dk(new Date()))renderAL()}
+      tk();alTimer=setInterval(tk,1000)}
+    else note.textContent=AL.streak>1?"Halte deine Serie von "+AL.streak+" Tagen am Leben.":"Komm jeden Tag wieder und sammle alle sechs Karten."
+  }
+  var alTimer=0;
+  function pickCard(){var tot=0;CSET.forEach(function(c){tot+=c.w});var x=Math.random()*tot;for(var i=0;i<CSET.length;i++){x-=CSET[i].w;if(x<0)return CSET[i]}return CSET[CSET.length-1]}
+  function claim(){
+    var today=dk(new Date());if(AL.last===today)return;var msg="";
+    if(!AL.last)AL.streak=1;else{var gap=dnum(today)-dnum(AL.last);
+      if(gap===1)AL.streak++;else if(gap===2&&AL.shield){AL.shield=0;AL.streak++;msg=" Dein Schutz-Joker hat die Serie gerettet."}else AL.streak=1}
+    if(AL.streak%7===0)AL.shield=Math.min(1,AL.shield+1);
+    AL.best=Math.max(AL.best,AL.streak);
+    var c=pickCard(),first=!(+AL.cards[c.id]);AL.cards[c.id]=(+AL.cards[c.id]||0)+1;AL.last=today;saveAL();
+    var f=d.getElementById("pkf");f.textContent="";f.className="pkf";f.style.setProperty("--rc",{l:"#ffcf5c",e:"#b57cff",s:"#6aa7ff",g:"#9a93ad"}[c.c]);
+    if(c.img){var im=new Image();im.src=c.img;im.alt=c.n;f.appendChild(im)}else{f.classList.add("txt");if(c.red)f.classList.add("red");f.textContent=c.t}
+    var pn=d.getElementById("pkn");pn.textContent=(first?"Neu: ":"")+c.n;var sm=d.createElement("small");sm.textContent=c.r+" · Serie: "+AL.streak+" Tage"+msg;pn.appendChild(sm);
+    d.getElementById("pull").hidden=false;renderAL();
+    setTimeout(function(){burst(d.querySelector(".pk"),{l:"#ffcf5c",e:"#c79bff",s:"#8ab8ff",g:"#d6d0e6"}[c.c])},1500);
+  }
+  d.getElementById("alClaim").addEventListener("click",claim);
+  d.getElementById("pull").addEventListener("click",function(){this.hidden=true});
+  var REW=[{f:"wallpaper-joker-lila.jpg",n:"Joker in Lila",k:"j",x:1,t:"1 Joker im Spiel finden",img:CARDS.l},{f:"wallpaper-joker-rot.jpg",n:"Joker in Rot",k:"b",x:3,t:"3 Bonus-Punkte sammeln",img:CARDS.r},{f:"wallpaper-dame-lila.jpg",n:"Dame in Lila",k:"j",x:3,t:"3 Joker im Spiel finden",img:CARDS.d},{f:"wallpaper-dame-rot.jpg",n:"Dame in Rot",k:"b",x:6,t:"6 Bonus-Punkte sammeln",img:CARDS.r2}];
+  function renderRewards(){
+    var box=d.getElementById("rewards");box.textContent="";
+    REW.forEach(function(r){var ok=(+S[r.k]||0)>=r.x,a=d.createElement(ok?"a":"div");a.className="rw"+(ok?" ok":"");if(ok){a.href=r.f;a.setAttribute("download",r.f)}
+      var im=d.createElement("div");im.className="im";var p=new Image();p.src=r.img;p.alt="";im.appendChild(p);if(!ok){var l=d.createElement("div");l.className="lk";l.textContent="\uD83D\uDD12";im.appendChild(l)}
+      var b=d.createElement("b");b.textContent=r.n+" · Hintergrund";var s=d.createElement("span");s.textContent=ok?"Zum Speichern antippen":r.t+" ("+Math.min(+S[r.k]||0,r.x)+"/"+r.x+")";a.append(im,b,s);box.appendChild(a)});
+  }
+  var _show=show;show=function(){_show();renderRewards()};
+  renderAL();renderRewards();
+  /* Challenge */
+  var chIO=null;
+  function renderChallenge(c){
+    var box=d.getElementById("chal");if(!c||!c.title||!(+c.goal>0)){box.hidden=true;return}
+    var cur=Math.max(0,+c.current||0),goal=+c.goal,pct=Math.min(100,Math.round(cur/goal*100));
+    d.getElementById("chT").textContent=c.title;d.getElementById("chV").textContent=cur+" / "+goal;box.hidden=false;
+    var f=d.getElementById("chF");f.style.width="0";
+    if(still||!("IntersectionObserver" in window)){f.style.width=pct+"%";return}
+    if(chIO)chIO.disconnect();chIO=new IntersectionObserver(function(e){if(e[0].isIntersecting){f.style.width=pct+"%";chIO.disconnect()}},{threshold:.5});chIO.observe(box);
+  }
+  /* Story-Bild teilen */
+  function shareImage(){
+    var cv2=d.createElement("canvas");cv2.width=1080;cv2.height=1920;var x=cv2.getContext("2d");
+    var im=new Image();im.onload=function(){
+      var g=x.createLinearGradient(0,0,0,1920);g.addColorStop(0,"#1d0c3a");g.addColorStop(1,"#050309");x.fillStyle=g;x.fillRect(0,0,1080,1920);
+      var rg=x.createRadialGradient(540,900,50,540,900,700);rg.addColorStop(0,"rgba(150,70,255,.55)");rg.addColorStop(1,"rgba(150,70,255,0)");x.fillStyle=rg;x.fillRect(0,0,1080,1920);
+      x.textAlign="center";x.fillStyle="#b6afc9";x.font="600 38px system-ui,sans-serif";x.fillText("ICH HABE DEN",540,200);
+      x.lineJoin="round";x.lineWidth=7;x.strokeStyle="#f4f0fb";x.fillStyle="#b57cff";x.font="150px 'Agent Orange',Impact,sans-serif";x.strokeText("JOKER",540,360);x.fillText("JOKER",540,360);
+      x.fillStyle="#b6afc9";x.font="600 38px system-ui,sans-serif";x.fillText("GEFUNDEN",540,478);
+      var w=700,h=1050,cx=190,cy=570;x.save();x.shadowColor="rgba(150,70,255,.8)";x.shadowBlur=70;x.beginPath();x.roundRect?x.roundRect(cx,cy,w,h,34):x.rect(cx,cy,w,h);x.clip();x.drawImage(im,cx,cy,w,h);x.restore();
+      x.fillStyle="#f4f0fb";x.font="600 44px system-ui,sans-serif";x.fillText("Creator-Code: 420 Joker",540,1730);
+      x.fillStyle="#b6afc9";x.font="32px system-ui,sans-serif";x.fillText(location.host+location.pathname.replace(/index\.html$/,""),540,1790);
+      cv2.toBlob(function(bl){if(!bl)return;var f=new File([bl],"ich-habe-den-joker-gefunden.png",{type:"image/png"});
+        if(navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f],text:"Ich habe den 420 Joker gefunden!"}).catch(function(){})}
+        else{var a=d.createElement("a");a.href=URL.createObjectURL(bl);a.download=f.name;d.body.appendChild(a);a.click();a.remove()}},"image/png");
+    };
+    im.src="karte-lila.webp";
+  }
   /* BEWEGUNG: Headline, Fortschritt, Laufband, Reveal, Countdown, Text-Reveal */
   var hero=d.querySelector(".hero"),h1=d.querySelector("h1");
   function splitCh(node,st){
@@ -569,6 +732,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
   var rio="IntersectionObserver" in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");rio.unobserve(e.target)}})},{threshold:.15}):null;
   function rev(el){if(rio)rio.observe(el);else el.classList.add("in")}
   [].forEach.call(d.querySelectorAll(".rv2"),rev);
+  var handEl=d.getElementById("hand");if(rio){var hio=new IntersectionObserver(function(e){if(e[0].isIntersecting){handEl.classList.add("dealt");hio.disconnect()}},{threshold:.4});hio.observe(handEl)}else handEl.classList.add("dealt");
   var wordsP=[].slice.call(d.querySelectorAll(".about p")).map(function(p){
     var ws=p.textContent.trim().split(/\s+/);p.textContent="";
     return ws.map(function(w,i){var s=d.createElement("span");s.className="wd"+(still?" on":"");s.textContent=w;p.appendChild(s);if(i<ws.length-1)p.appendChild(d.createTextNode(" "));return s})});
