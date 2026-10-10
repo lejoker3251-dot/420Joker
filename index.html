@@ -627,7 +627,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
   }
   d.getElementById("annX").addEventListener("click",function(){try{sessionStorage.setItem("annX",d.getElementById("annText").textContent)}catch(e){}ann.hidden=true;setAH()});
   addEventListener("resize",setAH);
-  var MINSTAT=100,SL={tiktok:"Follower auf TikTok",youtube:"Abonnenten auf YouTube",twitch:"Follower auf Twitch"};
+  var MINSTAT=100,SL={tiktok:"Follower auf TikTok",discord:"Mitglieder auf Discord",youtube:"Abonnenten auf YouTube",twitch:"Follower auf Twitch"};
   function renderStats(s){
     var row=d.getElementById("statrow");row.textContent="";var pf=d.getElementById("proof");pf.hidden=!(s&&+s.tiktok>=MINSTAT);if(!pf.hidden)d.getElementById("pv").textContent=NF.format(+s.tiktok);if(!s)return;
     Object.keys(SL).forEach(function(k){var n=+s[k];if(!(n>=MINSTAT))return;
