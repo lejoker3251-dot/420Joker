@@ -1,0 +1,92 @@
+{
+  "id": "./",
+  "name": "420 Joker",
+  "short_name": "420 Joker",
+  "description": "Fortnite Creator: Gaming auf TikTok, YouTube und Twitch. Tageskarte, Spiel und Streams.",
+  "lang": "de",
+  "dir": "ltr",
+  "start_url": "./?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#050309",
+  "theme_color": "#050309",
+  "categories": [
+    "entertainment",
+    "games"
+  ],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Tageskarte holen",
+      "short_name": "Album",
+      "url": "./?source=pwa#album",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Zieh den Joker",
+      "short_name": "Spiel",
+      "url": "./?source=pwa#ziehen",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Nächste Streams",
+      "short_name": "Streams",
+      "url": "./?source=pwa#streams",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot-1.jpg",
+      "sizes": "780x1688",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Startseite"
+    },
+    {
+      "src": "screenshot-2.jpg",
+      "sizes": "780x1688",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Dein Album"
+    }
+  ]
+}

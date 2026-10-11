@@ -38,10 +38,18 @@ Statische Seite ohne Build-Schritt, läuft direkt auf GitHub Pages: https://lejo
 - Die Challenge erscheint im Community-Band mit Fortschrittsbalken. Ohne `challenge` bleibt sie unsichtbar.
 - `shopUrl` ist der Epic-Shop-Link mit deinem Code (Fortnite.com, Item-Shop, Teilen-Symbol). Nur Adressen von fortnite.com werden akzeptiert.
 
+## App (PWA)
+Die Seite ist als App installierbar: `manifest.webmanifest`, `sw.js` (Offline-Speicher), `icon-*.png`, `screenshot-*.jpg`.
+- Android/Chrome: Knopf "App installieren" im Album oder Footer. iPhone: Safari, Teilen, "Zum Home-Bildschirm" (die Seite zeigt eine Anleitung).
+- Nach Änderungen an Bildern musst du nichts tun. Die Seite und `live.json`/`clips.json` kommen immer frisch aus dem Netz, Bilder werden im Hintergrund erneuert.
+- Willst du alle Besucher zur Neuladung zwingen, erhöhe in `sw.js` die Zahl bei `const V = "joker-v1"`.
+- `qr-420joker.png` ist der QR-Code zur Seite. Ändert sich die Adresse, muss er neu erzeugt werden.
+- `stream-kalender.ics` ist der abonnierbare Stream-Kalender. Die Automatik (`AUTOMATIK`) füllt ihn aus `live.json`.
+
 ## Stream-Plan (`live.json`)
 ```json
 "plan": [
-  { "day": "Mi", "time": "19:00", "title": "Fortnite mit der Community", "platform": "twitch" },
+  { "day": "Mi", "time": "19:00", "title": "Fortnite mit der Community", "platform": "twitch", "dur": 120 },
   { "day": "Fr", "time": "20:00", "title": "Ranked-Session", "platform": "twitch" }
 ]
 ```

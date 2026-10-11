@@ -6,6 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>420 Joker – Fortnite Creator</title>
 <meta name="theme-color" content="#050309">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="420 Joker">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta property="og:title" content="420 Joker – Fortnite Creator">
 <meta property="og:description" content="Gaming auf TikTok, YouTube und Twitch. Creator-Code: 420 Joker.">
 <meta property="og:type" content="website">
@@ -207,6 +212,26 @@ footer a:hover .ic,footer a:focus-visible .ic{transform:translateY(-3px) rotate(
 .pkn{margin-top:30px;font:italic 30px var(--serif);animation:in 1s 1.7s both}
 .pkn small{display:block;font:14px var(--sans);color:var(--mute);margin-top:8px}
 @media(prefers-reduced-motion:reduce){.pk{transform:rotateY(180deg)}}
+.toast{position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom,0px));translate:-50% 12px;z-index:95;padding:12px 20px;border-radius:99px;background:rgba(16,10,28,.94);border:1px solid var(--line);font-size:14px;opacity:0;pointer-events:none;transition:opacity .3s,translate .3s;white-space:nowrap}
+.toast.on{opacity:1;translate:-50% 0}
+.chipb{background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--ink);border-radius:99px;padding:8px 16px;font:inherit;font-size:13px;cursor:pointer}
+.chipb:hover{background:var(--ink);color:#0a0710}
+.prefs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
+.calbtns{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.calbtns .btn{font-size:14px;padding:11px 20px;cursor:pointer;font-family:inherit}
+.sheet{position:fixed;inset:0;z-index:92;background:rgba(5,3,9,.78);backdrop-filter:blur(8px);display:grid;align-items:end}
+.sheet[hidden]{display:none}
+.sheet>div{background:#120b20;border-top:1px solid var(--line);border-radius:22px 22px 0 0;padding:26px 24px calc(30px + env(safe-area-inset-bottom,0px));max-width:560px;margin:0 auto;width:100%}
+.sheet h3{font:400 26px var(--serif);margin-bottom:10px}.sheet ol{padding-left:20px;color:var(--mute)}.sheet li{margin-bottom:8px}.sheet button{margin-top:16px}
+.qrbox{background:#fff;color:#111;border-radius:22px;padding:22px;max-width:340px;box-shadow:0 30px 80px -20px var(--glow);cursor:default}
+.qrbox img{display:block;width:100%;height:auto;border-radius:8px}
+.qrbox p{font-size:14px;margin:12px 0 14px;color:#333}.qrbox .btn{background:#111;color:#fff;font-size:14px;padding:11px 22px}
+.slot2.got{transform:perspective(700px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .18s ease-out;touch-action:pan-y}
+.slot2.holo::after,.pkf.holo::after{content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:color-dodge;opacity:.65;border-radius:inherit;background:linear-gradient(115deg,transparent 22%,rgba(255,255,255,.4) 38%,rgba(110,200,255,.3) 46%,rgba(255,120,220,.3) 54%,transparent 70%);background-size:260% 260%;background-position:calc(var(--hx,30)*1%) calc(var(--hy,30)*1%)}
+.slot2.holo:not(.tilting)::after,.pkf.holo::after{animation:holoIdle 6s ease-in-out infinite alternate}
+@keyframes holoIdle{from{background-position:15% 20%}to{background-position:85% 80%}}
+.slot2.got.r-l::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 22px rgba(255,207,92,.45);animation:goldPulse 3s ease-in-out infinite}
+@keyframes goldPulse{50%{box-shadow:inset 0 0 34px rgba(255,207,92,.8)}}
 .soon{padding:44px 0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px 32px;align-items:center}
 .soon b{font:400 clamp(34px,6vw,54px)/1 var(--serif);color:var(--acc)}
 .soon span{color:var(--mute);max-width:42ch}
@@ -348,6 +373,9 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
 <a class="livebar" id="livebar" hidden target="_blank" rel="noopener"><i class="dot"></i><b>Live auf <span id="lbn" style="color:var(--ink)"></span></b><span>Jetzt zuschauen</span></a>
 <a class="skip" href="#bereiche">Zum Inhalt</a>
 <div class="bg" id="bg" aria-hidden="true"></div><div class="pull" id="pull" hidden role="dialog" aria-label="Neue Karte"><div><div class="pkwrap"><div class="pk"><span class="pkb">&spades;</span><span class="pkf" id="pkf"></span></div></div><p class="pkn" id="pkn"></p></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="sheet" id="iosSheet" hidden role="dialog" aria-label="App installieren"><div><h3>Als App installieren</h3><ol id="iosSteps"></ol><button class="chipb" id="iosClose" type="button">Verstanden</button></div></div>
+<div class="pull" id="qrm" hidden role="dialog" aria-label="QR-Code"><div class="qrbox"><img src="qr-420joker.png" alt="QR-Code zur Seite" width="1024" height="1024"><p>Mit der Kamera scannen, um die Seite zu öffnen.</p><a class="btn" href="qr-420joker.png" download="420joker-qr.png">Als Bild speichern</a></div></div>
 <div class="spot" aria-hidden="true"></div><canvas id="gl" aria-hidden="true"></canvas><div id="cardhint" aria-hidden="true">Karte antippen</div>
 <header id="top">
   <div id="prog" aria-hidden="true"></div>
@@ -391,6 +419,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
     <div class="cd" id="cd" hidden><span>Nächster Stream in</span><b id="cdv"></b><small id="cdt"></small></div>
     <div class="plan" id="plan"><div class="soon rv2" style="--dx:-48px"><b>Coming soon</b><span>Die ersten Termine folgen. Folge mir auf Twitch, dann verpasst du nichts.</span></div></div>
     <p class="tz" id="tz" hidden>Alle Zeiten in deutscher Zeit.</p>
+    <div class="calbtns" id="calbtns" hidden><button class="btn alt" id="calAdd" type="button">Alle Streams in den Kalender</button><a class="btn alt" id="calSub" hidden>Kalender abonnieren</a></div>
   </div>
 </section>
 
@@ -436,6 +465,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
       <div class="statrow" id="statrow"></div>
       <div class="chal" id="chal" hidden><div class="chtop"><b id="chT"></b><span id="chV"></span></div><div class="chbar"><i id="chF"></i></div></div>
       <a class="btn" href="https://discord.gg/5wPdtbftAr" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-discord"/></svg>Discord beitreten</a>
+      <div class="prefs"><button class="chipb" id="shareC" type="button">Seite teilen</button><button class="chipb" id="qrC" type="button">QR-Code</button></div>
     </div>
   </div>
 </section>
@@ -451,6 +481,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
       <button class="pc" type="button" aria-label="Karte aufdecken"><span class="front">♠</span><span class="faceup"></span></button>
     </div>
     <div class="say" id="say" aria-live="polite"></div>
+    <div class="prefs"><button class="chipb" id="sndBtn" type="button" aria-pressed="false">Ton: aus</button><button class="chipb" id="hapBtn" type="button" hidden>Vibration: an</button></div>
     <div class="stats"><div><b id="sj">0</b><span>Joker gefunden</span></div><div><b id="sb">0</b><span>Bonus-Punkte</span></div><div><b id="sn">0</b><span>Versuche</span></div></div>
     <button class="rs" id="rs" type="button">Zähler zurücksetzen</button>
   </div>
@@ -462,6 +493,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
     <div class="albbar"><div><b id="alStreak">0</b><span>Tage in Folge</span></div><div><b id="alCount">0/6</b><span>Karten gesammelt</span></div><div><b id="alShield">0</b><span>Schutz-Joker</span></div></div>
     <div class="albgrid" id="albgrid"></div>
     <div class="alact"><button class="btn" id="alClaim" type="button">Tageskarte holen</button><small id="alNote">Komm jeden Tag wieder und sammle alle sechs Karten.</small></div>
+    <div class="prefs"><button class="chipb" id="installBtn" type="button" hidden>App installieren</button></div>
     <div class="rewards" id="rewards"></div>
   </div>
 </section>
@@ -496,7 +528,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
 <footer>
   <div class="wrap">
     <div><a href="https://www.tiktok.com/@greengrowseeds" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-tiktok"/></svg>TikTok</a><a href="https://www.youtube.com/@Real420Joker" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-youtube"/></svg>YouTube</a><a href="https://discord.gg/5wPdtbftAr" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-discord"/></svg>Discord</a><a href="https://www.twitch.tv/LeJoker3251" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-twitch"/></svg>Twitch</a></div>
-        <div><a href="#" data-mail><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Kontakt</a><a href="#ziehen">Joker ziehen</a><a href="#album">Album</a><a href="#ueber-mich">Über mich</a><a href="#">Nach oben</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>© 2026 420 Joker</div>
+        <div><a href="#" data-mail><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Kontakt</a><a href="#" id="shareF">Teilen</a><a href="#" id="qrF">QR-Code</a><a href="#" id="installF" hidden>App installieren</a><a href="#ziehen">Joker ziehen</a><a href="#album">Album</a><a href="#ueber-mich">Über mich</a><a href="#">Nach oben</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>© 2026 420 Joker</div>
   </div>
 </footer>
 
@@ -559,7 +591,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
   function show(){d.getElementById("sj").textContent=S.j;d.getElementById("sb").textContent=S.b;d.getElementById("sn").textContent=S.n;try{localStorage.setItem("jokerStats",JSON.stringify(S))}catch(e){}}
   d.getElementById("rs").addEventListener("click",function(){S={j:0,b:0,n:0};show()});
   hand.forEach(function(c){c.addEventListener("click",function(){
-    if(done)return;done=true;c.classList.add("up");
+    if(done)return;done=true;c.classList.add("up");sfx("flip");vib(15);
     var kind=c.dataset.kind;S.n++;if(kind==="joker")S.j++;if(kind==="dame")S.b++;show();
     hand.forEach(function(o,k){if(o!==c)setTimeout(function(){o.classList.add("up")},750+k*120)});
     setTimeout(function(){
@@ -567,6 +599,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
         dame:'<b>Bonus-Karte. '+(c.dataset.name||"Die Dame")+'.</b><br>Das ist kein Treffer, aber ein Bonus-Punkt für dich.',
         other:'<b>Knapp daneben.</b><br>Der lila Joker war eine andere Karte.'};
       if(kind==="joker")burst(c,"#c79bff");if(kind==="dame")burst(c,"#ff5a68");
+      if(kind==="joker"){sfx("win");vib([30,40,30,40,90])}else if(kind==="dame"){sfx("bonus");vib([25,35,25])}else{sfx("lose");vib(40)}
       say.innerHTML=m[kind]+'<br><button type="button" id="again">Neu mischen</button>';
       d.getElementById("again").addEventListener("click",deal);var si=d.getElementById("shareImg");if(si)si.addEventListener("click",shareImage);
     },1000);
@@ -588,7 +621,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
   }
   function renderPlan(a){
     var box=d.getElementById("plan");box.textContent="";d.getElementById("streams").hidden=false;d.getElementById("navStreams").hidden=false;
-    d.getElementById("tz").hidden=false;startCountdown(a);
+    d.getElementById("tz").hidden=false;startCountdown(a);setupCalendar(a);
     a.slice(0,5).forEach(function(p,ix){
       var ch=d.querySelector('[data-ch="'+p.platform+'"]'),l=d.createElement("a");
       l.className="slot rv2";l.style.setProperty("--dx",(ix%2?48:-48)+"px");l.style.setProperty("--td",(ix*.1)+"s");l.href=ch?ch.href:"#";l.target="_blank";l.rel="noopener";
@@ -638,6 +671,75 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
     io.observe(row);
   }
   [].forEach.call(d.querySelectorAll("[data-mail]"),function(a){a.href="mailto:"+["420joker","gmail.com"].join("@")+"?subject="+encodeURIComponent("Anfrage 420 Joker")});
+  /* APP: Einstellungen, Ton, Vibration, Teilen, QR, Installieren, Kalender */
+  var PREF={snd:false,hap:true};
+  try{var _p=JSON.parse(localStorage.getItem("jokerPrefs"));if(_p){PREF.snd=!!_p.snd;PREF.hap=_p.hap!==false}}catch(e){}
+  function savePrefs(){try{localStorage.setItem("jokerPrefs",JSON.stringify(PREF))}catch(e){}}
+  var canVib=!!navigator.vibrate,AC=null;
+  function vib(p){if(PREF.hap&&canVib&&!still){try{navigator.vibrate(p)}catch(e){}}}
+  function ac(){if(!AC){var C=window.AudioContext||window.webkitAudioContext;if(!C)return null;try{AC=new C()}catch(e){return null}}if(AC.state==="suspended")AC.resume();return AC}
+  function tone(f,t0,dur,type,vol){var a=ac();if(!a)return;var o=a.createOscillator(),g=a.createGain();o.type=type||"sine";o.frequency.setValueAtTime(f,a.currentTime+t0);g.gain.setValueAtTime(.0001,a.currentTime+t0);g.gain.exponentialRampToValueAtTime(vol||.12,a.currentTime+t0+.015);g.gain.exponentialRampToValueAtTime(.0001,a.currentTime+t0+dur);o.connect(g);g.connect(a.destination);o.start(a.currentTime+t0);o.stop(a.currentTime+t0+dur+.05)}
+  function noise(t0,dur,freq,vol){var a=ac();if(!a)return;var n=Math.floor(a.sampleRate*dur),b=a.createBuffer(1,n,a.sampleRate),d0=b.getChannelData(0);for(var i=0;i<n;i++)d0[i]=(Math.random()*2-1)*(1-i/n);var s=a.createBufferSource();s.buffer=b;var f=a.createBiquadFilter();f.type="bandpass";f.frequency.value=freq;f.Q.value=.9;var g=a.createGain();g.gain.value=vol;s.connect(f);f.connect(g);g.connect(a.destination);s.start(a.currentTime+t0)}
+  function sfx(t,r){if(!PREF.snd||still)return;
+    if(t==="flip"){noise(0,.09,3200,.22);tone(140,0,.08,"triangle",.1)}
+    else if(t==="win"){[523,659,784,1047].forEach(function(f,i){tone(f,i*.09,.28,"sine",.13)})}
+    else if(t==="bonus"){tone(659,0,.2,"sine",.12);tone(988,.1,.3,"sine",.12)}
+    else if(t==="lose"){tone(200,0,.18,"triangle",.1);tone(150,.12,.2,"triangle",.08)}
+    else if(t==="pull"){var n={l:6,e:5,s:4,g:3}[r]||3;for(var i=0;i<n;i++)tone(660*Math.pow(1.122,i*2),i*.07,.35,"sine",.09)}}
+  window.addEventListener("jokersfx",function(e){sfx(e.detail);vib(12)});
+  var sndB=d.getElementById("sndBtn"),hapB=d.getElementById("hapBtn");
+  function prefUI(){sndB.textContent="Ton: "+(PREF.snd?"an":"aus");sndB.setAttribute("aria-pressed",PREF.snd);hapB.hidden=!canVib;hapB.textContent="Vibration: "+(PREF.hap?"an":"aus");hapB.setAttribute("aria-pressed",PREF.hap)}
+  sndB.addEventListener("click",function(){PREF.snd=!PREF.snd;savePrefs();prefUI();if(PREF.snd)sfx("flip")});
+  hapB.addEventListener("click",function(){PREF.hap=!PREF.hap;savePrefs();prefUI();vib(30)});
+  prefUI();
+  var toastT=0;function toast(m){var t=d.getElementById("toast");t.textContent=m;t.classList.add("on");clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove("on")},2600)}
+  function tfb(x){var a=d.createElement("textarea");a.value=x;a.style.cssText="position:fixed;opacity:0";d.body.appendChild(a);a.select();try{d.execCommand("copy")}catch(e){}a.remove()}
+  function copyFallback(x){try{navigator.clipboard.writeText(x).catch(function(){tfb(x)})}catch(e){tfb(x)}}
+  function shareSite(e){if(e)e.preventDefault();var url=location.origin+location.pathname.replace(/index\.html$/,"");
+    if(navigator.share){navigator.share({title:"420 Joker",text:"Fortnite Creator: Gaming auf TikTok, YouTube und Twitch",url:url}).catch(function(){})}
+    else{copyFallback(url);toast("Link kopiert")}}
+  ["shareF","shareC"].forEach(function(i){d.getElementById(i).addEventListener("click",shareSite)});
+  function openQR(e){if(e)e.preventDefault();d.getElementById("qrm").hidden=false}
+  ["qrF","qrC"].forEach(function(i){d.getElementById(i).addEventListener("click",openQR)});
+  d.getElementById("qrm").addEventListener("click",function(e){if(!e.target.closest(".qrbox a"))this.hidden=true});
+  var deferredP=null,standalone=matchMedia("(display-mode: standalone)").matches||navigator.standalone===true;
+  var isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+  var instBtns=[d.getElementById("installBtn"),d.getElementById("installF")];
+  function showInst(on){instBtns.forEach(function(b){b.hidden=!on})}
+  if(!standalone&&isIOS)showInst(true);
+  window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();deferredP=e;if(!standalone)showInst(true)});
+  window.addEventListener("appinstalled",function(){deferredP=null;showInst(false);toast("App installiert")});
+  function doInstall(e){if(e)e.preventDefault();
+    if(deferredP){deferredP.prompt();deferredP.userChoice.then(function(){deferredP=null;showInst(false)},function(){});return}
+    if(isIOS){var safari=/Safari/.test(navigator.userAgent)&&!/CriOS|FxiOS|EdgiOS|OPiOS/.test(navigator.userAgent),ol=d.getElementById("iosSteps");ol.textContent="";
+      (safari?["Tippe unten in der Safari-Leiste auf das Teilen-Symbol (Quadrat mit Pfeil nach oben).","Wähle „Zum Home-Bildschirm“.","Tippe oben rechts auf „Hinzufügen“."]:["Öffne diese Seite in Safari. Andere Browser am iPhone können keine Apps zum Home-Bildschirm hinzufügen.","Tippe dort auf das Teilen-Symbol und wähle „Zum Home-Bildschirm“."]).forEach(function(s){var li=d.createElement("li");li.textContent=s;ol.appendChild(li)});
+      d.getElementById("iosSheet").hidden=false}}
+  instBtns.forEach(function(b){b.addEventListener("click",doInstall)});
+  d.getElementById("iosClose").addEventListener("click",function(){d.getElementById("iosSheet").hidden=true});
+  d.getElementById("iosSheet").addEventListener("click",function(e){if(e.target===this)this.hidden=true});
+  if("serviceWorker" in navigator&&(location.protocol==="https:"||location.hostname==="localhost"))addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});
+  var LASTPLAN=[];
+  function setupCalendar(a){LASTPLAN=a;d.getElementById("calbtns").hidden=false;var sub=d.getElementById("calSub");
+    fetch("stream-kalender.ics",{method:"HEAD",cache:"no-store"}).then(function(r){if(r.ok){sub.href="webcal://"+location.host+location.pathname.replace(/[^\/]*$/,"")+"stream-kalender.ics";sub.hidden=false}}).catch(function(){})}
+  function icsEsc(s){return String(s).replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\n/g,"\\n")}
+  function icsFold(l){var o=[];while(l.length>73){o.push(l.slice(0,73));l=" "+l.slice(73)}o.push(l);return o.join("\r\n")}
+  function berlinParts(dt){var o={};new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Berlin",year:"numeric",month:"2-digit",day:"2-digit",weekday:"short",hourCycle:"h23",hour:"2-digit",minute:"2-digit"}).formatToParts(dt).forEach(function(x){o[x.type]=x.value});return o}
+  function buildICS(plan){
+    var n=berlinParts(new Date()),base=Date.UTC(+n.year,+n.month-1,+n.day),ti=WK.indexOf(n.weekday),u=new Date();
+    var stamp=u.getUTCFullYear()+pad(u.getUTCMonth()+1)+pad(u.getUTCDate())+"T"+pad(u.getUTCHours())+pad(u.getUTCMinutes())+pad(u.getUTCSeconds())+"Z";
+    var L=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//420 Joker//Streams//DE","CALSCALE:GREGORIAN","METHOD:PUBLISH","X-WR-CALNAME:420 Joker Streams","X-WR-TIMEZONE:Europe/Berlin","BEGIN:VTIMEZONE","TZID:Europe/Berlin","BEGIN:DAYLIGHT","TZOFFSETFROM:+0100","TZOFFSETTO:+0200","TZNAME:CEST","DTSTART:19700329T020000","RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU","END:DAYLIGHT","BEGIN:STANDARD","TZOFFSETFROM:+0200","TZOFFSETTO:+0100","TZNAME:CET","DTSTART:19701025T030000","RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU","END:STANDARD","END:VTIMEZONE"];
+    var BD=["MO","TU","WE","TH","FR","SA","SU"];
+    plan.forEach(function(p,i){var di=DAYS[(p.day||"").toLowerCase().slice(0,2)],tm=(p.time||"").split(":");if(di==null||tm.length<2)return;
+      var delta=(di-ti+7)%7,dt=new Date(base+delta*864e5),hh=+tm[0],mm=+tm[1],dur=+p.dur||120,tot=hh*60+mm+dur,dt2=new Date(dt.getTime()+Math.floor(tot/1440)*864e5),eh=Math.floor(tot%1440/60),em=tot%60;
+      function ds(x,h,m){return x.getUTCFullYear()+pad(x.getUTCMonth()+1)+pad(x.getUTCDate())+"T"+pad(h)+pad(m)+"00"}
+      var ch=d.querySelector('[data-ch="'+p.platform+'"]'),url=ch?ch.href:"";
+      L.push("BEGIN:VEVENT","UID:joker-"+i+"-"+BD[di]+pad(hh)+pad(mm)+"@420joker","DTSTAMP:"+stamp,"DTSTART;TZID=Europe/Berlin:"+ds(dt,hh,mm),"DTEND;TZID=Europe/Berlin:"+ds(dt2,eh,em),"RRULE:FREQ=WEEKLY;BYDAY="+BD[di],
+        "SUMMARY:"+icsEsc((p.title||"Stream")+" ("+(NAMES[p.platform]||"Live")+")"),"DESCRIPTION:"+icsEsc("Live auf "+(NAMES[p.platform]||"")+(url?": "+url:"")),url?"URL:"+url:"","BEGIN:VALARM","TRIGGER:-PT15M","ACTION:DISPLAY","DESCRIPTION:Stream startet gleich","END:VALARM","END:VEVENT")});
+    L.push("END:VCALENDAR");return L.filter(Boolean).map(icsFold).join("\r\n")+"\r\n"}
+  window.__buildICS=buildICS;
+  d.getElementById("calAdd").addEventListener("click",function(){var bl=new Blob([buildICS(LASTPLAN)],{type:"text/calendar;charset=utf-8"}),a=d.createElement("a");a.href=URL.createObjectURL(bl);a.download="420joker-streams.ics";d.body.appendChild(a);a.click();a.remove();toast("Kalenderdatei erstellt")});
+  function holoBind(b){if(still)return;b.addEventListener("pointermove",function(e){var r=b.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;b.classList.add("tilting");b.style.setProperty("--rx",((.5-y)*16)+"deg");b.style.setProperty("--ry",((x-.5)*16)+"deg");b.style.setProperty("--hx",x*100);b.style.setProperty("--hy",y*100)});
+    ["pointerleave","pointercancel"].forEach(function(ev){b.addEventListener(ev,function(){b.classList.remove("tilting");b.style.setProperty("--rx","0deg");b.style.setProperty("--ry","0deg")})})}
   /* ALBUM, BELOHNUNGEN, CHALLENGE, SHARE, SHOP */
   var CSET=[{id:"jl",n:"Joker in Lila",r:"Legendär",c:"l",w:8,img:CARDS.l},{id:"jr",n:"Joker in Rot",r:"Episch",c:"e",w:14,img:CARDS.r},{id:"dl",n:"Dame in Lila",r:"Selten",c:"s",w:20,img:CARDS.d},{id:"dr",n:"Dame in Rot",r:"Selten",c:"s",w:20,img:CARDS.r2},{id:"as",n:"Pik-Ass",r:"Gewöhnlich",c:"g",w:19,t:"A\u2660"},{id:"kh",n:"Herz-König",r:"Gewöhnlich",c:"g",w:19,t:"K\u2665",red:1}];
   var AL={cards:{},streak:0,last:"",shield:0,best:0};
@@ -649,6 +751,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
     var s=d.createElement("div"),box=d.createElement("div");box.className="slot2 r-"+c.c+(got?" got":" lock");
     if(got){if(c.img){var im=new Image();im.src=c.img;im.alt=c.n;box.appendChild(im)}else{box.classList.add("txt");if(c.red)box.classList.add("red");box.textContent=c.t}
       if(cnt>1){var e=d.createElement("em");e.textContent="\u00d7"+cnt;box.appendChild(e)}}else box.textContent="?";
+    if(got){holoBind(box);if(c.c==="l"||c.c==="e"||c.c==="s")box.classList.add("holo")}
     var cap=d.createElement("div");cap.className="slotc r-"+c.c;var b=d.createElement("b");b.textContent=got?c.n:"Noch nicht gefunden";var i=d.createElement("i");i.textContent=c.r;cap.append(b,i);s.append(box,cap);return s}
   function renderAL(){
     var g=d.getElementById("albgrid");g.textContent="";var n=0;
@@ -671,11 +774,11 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
     if(AL.streak%7===0)AL.shield=Math.min(1,AL.shield+1);
     AL.best=Math.max(AL.best,AL.streak);
     var c=pickCard(),first=!(+AL.cards[c.id]);AL.cards[c.id]=(+AL.cards[c.id]||0)+1;AL.last=today;saveAL();
-    var f=d.getElementById("pkf");f.textContent="";f.className="pkf";f.style.setProperty("--rc",{l:"#ffcf5c",e:"#b57cff",s:"#6aa7ff",g:"#9a93ad"}[c.c]);
+    var f=d.getElementById("pkf");f.textContent="";f.className="pkf"+((c.c==="l"||c.c==="e")?" holo":"");f.style.setProperty("--rc",{l:"#ffcf5c",e:"#b57cff",s:"#6aa7ff",g:"#9a93ad"}[c.c]);
     if(c.img){var im=new Image();im.src=c.img;im.alt=c.n;f.appendChild(im)}else{f.classList.add("txt");if(c.red)f.classList.add("red");f.textContent=c.t}
     var pn=d.getElementById("pkn");pn.textContent=(first?"Neu: ":"")+c.n;var sm=d.createElement("small");sm.textContent=c.r+" · Serie: "+AL.streak+" Tage"+msg;pn.appendChild(sm);
-    d.getElementById("pull").hidden=false;renderAL();
-    setTimeout(function(){burst(d.querySelector(".pk"),{l:"#ffcf5c",e:"#c79bff",s:"#8ab8ff",g:"#d6d0e6"}[c.c])},1500);
+    d.getElementById("pull").hidden=false;renderAL();sfx("flip");vib(20);
+    setTimeout(function(){sfx("pull",c.c);vib(c.c==="l"?[40,60,40,60,120]:c.c==="e"?[40,60,60]:30);burst(d.querySelector(".pk"),{l:"#ffcf5c",e:"#c79bff",s:"#8ab8ff",g:"#d6d0e6"}[c.c])},1500);
   }
   d.getElementById("alClaim").addEventListener("click",claim);
   d.getElementById("pull").addEventListener("click",function(){this.hidden=true});
@@ -861,8 +964,8 @@ function back(){flipT=0;clearTimeout(flipTimer);if(still){flipA=0;req()}}
 d.addEventListener("click",function(e){
  if(!heroPoly||e.target.closest("a,button,input,#intro"))return;if(!inPoly(e.clientX,e.clientY))return;
  clearTimeout(flipTimer);
- if(flipT===0){flipT=Math.PI;used=true;flipTimer=setTimeout(back,7000);if(still){flipA=flipT;req()}}
- else{cp("420 Joker");drawBack("Kopiert");flipTimer=setTimeout(function(){back();drawBack("")},1700)}
+ if(flipT===0){window.dispatchEvent(new CustomEvent("jokersfx",{detail:"flip"}));flipT=Math.PI;used=true;flipTimer=setTimeout(back,7000);if(still){flipA=flipT;req()}}
+ else{window.dispatchEvent(new CustomEvent("jokersfx",{detail:"bonus"}));cp("420 Joker");drawBack("Kopiert");flipTimer=setTimeout(function(){back();drawBack("")},1700)}
 });
 ["uM","uVP","uT","uN","uC","uL","uA","uSp","uG","uB","uHB"].forEach(function(n){U1[n]=gl.getUniformLocation(P1,n)});
 ["uVP","uS","uT"].forEach(function(n){U2[n]=gl.getUniformLocation(P2,n)});
