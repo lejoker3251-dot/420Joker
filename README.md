@@ -12,6 +12,7 @@ Statische Seite ohne Build-Schritt, läuft direkt auf GitHub Pages: https://lejo
 - `og-image.jpg`, `apple-touch-icon.png` – Vorschaubild für geteilte Links und App-Symbol
 - `404.html`, `sitemap.xml` – Fehlerseite und Suchmaschinen-Angabe
 - `thumb-*.webp` – Bilder der drei Kanal-Kacheln
+- `karte-rot.webp`, `karte-dame-lila.webp`, `karte-dame-rot.webp` – große Karten für Quiz-Ergebnis und Teilen-Bild
 - `wallpaper-*.jpg` – Handy-Hintergründe als Belohnung im Spiel
 - `karte-*.webp`, `AgentOrange.woff` – Bilder und Schrift
 - optional: `hero.mp4` – kurzer, stummer Loop (5 bis 8 Sekunden) für den Hero
@@ -37,6 +38,15 @@ Statische Seite ohne Build-Schritt, läuft direkt auf GitHub Pages: https://lejo
 ```
 - Die Challenge erscheint im Community-Band mit Fortschrittsbalken. Ohne `challenge` bleibt sie unsichtbar.
 - `shopUrl` ist der Epic-Shop-Link mit deinem Code (Fortnite.com, Item-Shop, Teilen-Symbol). Nur Adressen von fortnite.com werden akzeptiert.
+
+## Showreel (optional)
+Lege `hero.mp4` (oder `hero.webm`) neben die `index.html`: 5 bis 8 Sekunden, stumm, unter 5 MB. Der Clip läuft hinter der Headline und als Fenster auf der 3D-Hero-Karte. Ohne Datei bleibt alles wie bisher.
+
+## Einstellungen und Leistung
+Im Footer unter "Einstellungen" schalten Besucher Ton, Vibration, 3D-Szene und weiches Scrollen. Läuft ein Gerät zu langsam, schaltet die Seite die 3D-Szene selbst ab und weist darauf hin.
+
+## Quiz
+Die Fragen stehen in `index.html`. Suche nach `var DQ=` (Tages-Quiz, je Frage: Text, drei Antworten, Nummer der richtigen Antwort ab 0) und `var TQ=` (Quiz "Welcher Joker bist du?"). Pro Tag erscheint eine Frage aus `DQ`.
 
 ## App (PWA)
 Die Seite ist als App installierbar: `manifest.webmanifest`, `sw.js` (Offline-Speicher), `icon-*.png`, `screenshot-*.jpg`.

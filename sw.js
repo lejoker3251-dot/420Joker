@@ -1,7 +1,7 @@
 /* 420 Joker – Service Worker
    Strategie: Seiten und Daten zuerst aus dem Netz (immer frisch), Bilder und Schrift aus dem Speicher
    und im Hintergrund erneuert. Ohne Netz läuft die Seite aus dem Speicher weiter. */
-const V = "joker-v1";
+const V = "joker-v2";
 const CORE = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "apple-touch-icon.png",
   "karte-lila.webp", "karte-lila-klein.webp", "karte-rot-klein.webp", "karte-rot2-klein.webp", "karte-dame-lila-klein.webp",
   "thumb-youtube.webp", "thumb-twitch.webp", "thumb-tiktok.webp", "AgentOrange.woff", "qr-420joker.png",
