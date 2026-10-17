@@ -16,6 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lejoker3251-dot.github.io/420Joker/">
 <meta property="og:site_name" content="420 Joker">
+<meta property="og:locale" content="de_DE">
 <link rel="canonical" href="https://lejoker3251-dot.github.io/420Joker/">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "420 Joker", "url": "https://lejoker3251-dot.github.io/420Joker/", "description": "Fortnite Creator auf TikTok, YouTube und Twitch. Creator-Code: 420 Joker.", "sameAs": ["https://www.tiktok.com/@greengrowseeds", "https://www.youtube.com/@Real420Joker", "https://www.twitch.tv/LeJoker3251"]}</script>
@@ -23,6 +24,7 @@
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="420 Joker – Fortnite Creator">
+<meta name="twitter:description" content="Gaming auf TikTok, YouTube und Twitch. Creator-Code: 420 Joker.">
 <meta name="twitter:image" content="https://lejoker3251-dot.github.io/420Joker/og-image.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%83%8F%3C/text%3E%3C/svg%3E">
 <meta name="description" content="420 Joker: Fortnite Creator auf TikTok, YouTube und Twitch.">
@@ -307,10 +309,12 @@ section{scroll-margin-top:calc(100px + var(--ah))}
 .code button:hover{transform:translateY(-2px);box-shadow:0 12px 40px var(--glow)}
 #intro{position:fixed;inset:0;z-index:100;background:#050309;cursor:pointer;overflow:hidden;animation:out .8s 3.4s ease forwards}
 #intro::before{content:"";position:absolute;inset:-6%;background:var(--card) center/cover;filter:blur(30px) brightness(.55)}
-#intro .full{position:absolute;inset:0;background:var(--card) center/contain no-repeat;animation:reveal 3.6s cubic-bezier(.2,.6,.2,1) both}
+#intro .full{position:absolute;inset:0;z-index:20;background:var(--card) center/contain no-repeat;animation:reveal 2.2s 1.5s cubic-bezier(.2,.6,.2,1) both}
+#intro .fc{position:absolute;left:var(--x);top:0;width:var(--w);aspect-ratio:2/3;border-radius:8%;background:var(--img) center/cover no-repeat;box-shadow:0 10px 40px rgba(150,70,255,.4);opacity:0;filter:blur(var(--b));will-change:transform,opacity;pointer-events:none;animation:fcIn var(--t) var(--d) cubic-bezier(.2,.7,.2,1) both}
+@keyframes fcIn{0%{opacity:0;transform:translate3d(0,calc(var(--y) + 14vh),0) rotate(var(--r0)) scale(.7)}28%{opacity:var(--o)}100%{opacity:var(--o);transform:translate3d(var(--dx),calc(var(--y) - 22vh),0) rotate(var(--r1)) scale(1)}}
 @media(max-aspect-ratio:3/4){#intro .full{background-size:cover}}
 @keyframes reveal{0%{opacity:0;transform:scale(1.14);filter:brightness(2.2)}25%{opacity:1;filter:brightness(1.15)}100%{transform:scale(1);filter:brightness(1)}}
-#intro small{position:absolute;left:0;right:0;bottom:calc(28px + env(safe-area-inset-bottom,0px));text-align:center;font:14px var(--sans);color:rgba(244,240,251,.8);text-shadow:0 2px 12px #000;animation:in 1s 1.4s both}
+#intro small{z-index:21;position:absolute;left:0;right:0;bottom:calc(28px + env(safe-area-inset-bottom,0px));text-align:center;font:14px var(--sans);color:rgba(244,240,251,.8);text-shadow:0 2px 12px #000;animation:in 1s 1.4s both}
 @keyframes in{from{opacity:0;transform:translateY(24px) scale(.96);filter:blur(8px)}}
 @keyframes out{to{opacity:0;visibility:hidden}}
 @media(prefers-reduced-motion:reduce){#intro{display:none}}
@@ -430,6 +434,15 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></symbol><symbol id="i-twitch" viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></symbol><symbol id="i-discord" viewBox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9.1.5 12 .5 12s0 2.9.5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.8.5-4.8s0-2.9-.5-4.8z"/><path d="M9.8 15.6V8.4L16 12z" fill="#0a0614"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g></symbol></defs></svg>
 <div id="intro" role="presentation"><div class="full"></div><small>Tippen zum Überspringen</small></div>
+<script>
+(function(){var d=document,iv=d.getElementById("intro");if(!iv||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+var im=["karte-lila-klein.webp","karte-rot-klein.webp","karte-dame-lila-klein.webp","karte-rot2-klein.webp","karte-lila-klein.webp"],m=innerWidth<600,n=m?16:30,f=d.createDocumentFragment();
+function R(a,b){return a+Math.random()*(b-a)}
+for(var k=0;k<n;k++){var z=Math.random(),e=d.createElement("i");e.className="fc";
+e.style.cssText="--img:url("+im[k%im.length]+");--x:"+R(-4,92).toFixed(1)+"%;--y:"+R(4,70).toFixed(1)+"vh;--w:"+Math.round(54+z*(m?72:120))+"px;--b:"+(z>.88?"3px":"0px")+";--o:"+(.45+z*.55).toFixed(2)+";--t:"+R(2.6,3.4).toFixed(2)+"s;--d:"+R(0,.9).toFixed(2)+"s;--r0:"+Math.round(R(-35,35))+"deg;--r1:"+Math.round(R(-70,70))+"deg;--dx:"+Math.round(R(-70,70))+"px;z-index:"+Math.round(z*10);
+f.appendChild(e)}
+iv.insertBefore(f,iv.querySelector(".full"))})();
+</script>
 <a class="livebar" id="livebar" hidden target="_blank" rel="noopener"><i class="dot"></i><b>Live auf <span id="lbn" style="color:var(--ink)"></span></b><span>Jetzt zuschauen</span></a>
 <a class="skip" href="#bereiche">Zum Inhalt</a>
 <div class="bg" id="bg" aria-hidden="true"></div><div class="pull" id="pull" hidden role="dialog" aria-label="Neue Karte"><div><div class="pkwrap"><div class="pack"><b>420</b><small>Tageskarte</small><div class="packtop"></div></div><div class="pk"><span class="pkb">&spades;</span><span class="pkf" id="pkf"></span></div></div><p class="pkn" id="pkn"></p></div></div>
@@ -709,7 +722,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
       var g=d.createElement("span");g.className="go";g.textContent="Zuschauen";l.append(w,h,g);box.appendChild(l);rev(l);
     });
   }
-  checkLive();setInterval(checkLive,60000);
+  checkLive();setInterval(function(){if(!d.hidden)checkLive()},60000);d.addEventListener("visibilitychange",function(){if(!d.hidden)checkLive()});
   var hv=d.getElementById("hvid");
   var _vs=hv.querySelectorAll("source");_vs[_vs.length-1].addEventListener("error",function(){hv.remove()});
   hv.addEventListener("loadeddata",function(){hv.classList.add("on");if(!still)hv.play().catch(function(){})});
@@ -914,7 +927,7 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
   }
   function carLayout(){var car=d.getElementById("car");if(!car)return;var h=car.clientHeight,w=car.clientWidth,cw=Math.max(110,Math.min(h*.8/1.5,w*.46));
     car.style.setProperty("--cw",cw+"px");car.style.setProperty("--R",(cw*1.02)+"px");
-    d.getElementById("alwrap").style.height=Math.round(innerHeight*(1+(CAR.N-1)*.42))+"px"}
+    d.getElementById("alwrap").style.height=Math.round(innerHeight*(1+(CAR.N-1)*(matchMedia("(pointer:coarse)").matches?.28:.42)))+"px"}
   function carBase(){var wrap=d.getElementById("alwrap"),r=wrap.getBoundingClientRect(),dist=wrap.offsetHeight-innerHeight,p=dist>0?Math.max(0,Math.min(1,-r.top/dist)):0;return p*(CAR.N-1)*60}
   function carRender(){var car=d.getElementById("car");if(!car)return;var A=carBase()+CAR.user;CAR.A=A;car.querySelector(".ring").style.setProperty("--A",A.toFixed(2));
     var idx=((Math.round(A/60)%CAR.N)+CAR.N)%CAR.N;
@@ -968,8 +981,8 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
   var DQ=[["Wer hat Fortnite entwickelt?",["Epic Games","Ubisoft","Valve"],0],["Wie heißt der Bus, mit dem alle zur Insel fliegen?",["Party Bus","Battle Bus","Sky Train"],1],["Wie viele Spieler starten in einem normalen Battle-Royale-Match?",["50","100","150"],1],["Wie heißt die Spielwährung?",["V-Bucks","F-Coins","B-Bucks"],0],["Wie nennt man einen Sieg im Match?",["Gold Royale","Battle Win","Victory Royale"],2],["Was bedeutet Zero Build?",["Spielmodus ohne Bauen","Spiel ohne Waffen","Spiel ohne Zone"],0],["Welche Farbe steht für die Seltenheit Episch?",["Blau","Lila","Grün"],1],["Welche Farbe steht für die Seltenheit Legendär?",["Orange","Rot","Grün"],0],["Was macht der Sturm im Spiel?",["Er heilt alle Spieler","Er schrumpft die sichere Zone","Er bringt neue Waffen"],1],["Wie heißt das Programm, mit dem Epic Creator unterstützt?",["Creator Cash","Fan Fund","Support-A-Creator"],2],["Wie viele Spieler hat ein Squad?",["4","6","8"],0],["In welchem Jahr erschien Fortnite Battle Royale?",["2015","2017","2019"],1],["Mit welcher Engine wurde Fortnite entwickelt?",["Unreal Engine","Unity","Source"],0],["Wo kaufst du täglich wechselnde Outfits?",["Im Item-Shop","Im Bauhof","Im Lager"],0],["Wie nennt man selbst gebaute Spielwelten von Creators?",["Karten-Packs","Inseln","Server"],1],["Welche Farbe steht für die Seltenheit Selten?",["Blau","Grau","Rot"],0],["Wofür ist ein Emote da?",["Zum Heilen","Für einen Tanz oder eine Geste","Zum Bauen"],1],["Wie viele Spieler hat ein Duo?",["2","3","5"],0],["Was ist ein Creator-Code bei Support-A-Creator?",["Ein Cheat-Code","Ein Code, mit dem du einen Creator unterstützt","Ein Spielpass"],1],["Welche Farbe steht für die Seltenheit Ungewöhnlich?",["Grün","Lila","Gelb"],0]];
   var TQ=[["Wie startest du ein Match?",["Ich suche den ruhigsten Landeplatz und plane","Direkt dorthin, wo am meisten los ist","Ich schaue, wo die beste Beute liegt","Ich lasse mich überraschen und improvisiere"]],["Dein Squad sagt, du bist …",["der Kopf, der alles überblickt","der, der zuerst reinspringt","die, die jede Lücke findet","die, die alle zum Lachen bringt"]],["Die Zone zieht sich zusammen. Was tust du?",["Ich bin längst auf Position","Ich kämpfe mich durch","Ich nutze Deckung und Timing","Ich renne und hoffe aufs Beste"]],["Welche Musik läuft beim Zocken?",["Ruhige Beats, volle Konzentration","Laut und wild","Etwas Cooles, das kaum jemand kennt","Alles durcheinander, Hauptsache Party"]],["Was bedeutet Victory Royale für dich?",["Der Plan ist aufgegangen","Der Kampf hat sich gelohnt","Ich war einfach clever","Wir hatten Spaß, der Rest ist Bonus"]]];
   var TR=[{id:"jl",n:"Der Stratege",t:"STRATEGE",img:"karte-lila.webp",tx:"Du denkst drei Züge voraus, wählst deine Position mit Bedacht und gewinnst, weil dein Plan aufgeht. Deine Karte: Joker in Lila."},{id:"jr",n:"Der Haudegen",t:"HAUDEGEN",img:"karte-rot.webp",tx:"Wo es kracht, bist du schon da. Du lebst für den direkten Kampf und reißt dein Squad mit. Deine Karte: Joker in Rot."},{id:"dl",n:"Die Taktikerin",t:"TAKTIKERIN",img:"karte-dame-lila.webp",tx:"Du siehst Chancen, die andere übersehen, und nutzt jede Lücke im richtigen Moment. Deine Karte: Dame in Lila."},{id:"dr",n:"Die Chaos-Queen",t:"CHAOS-QUEEN",img:"karte-dame-rot.webp",tx:"Planlos? Niemals. Du improvisierst mit Stil, und alle haben Spaß dabei. Deine Karte: Dame in Rot."}];
-  var QS={last:"",ok:false,streak:0,best:0,total:0};
-  try{var _q=JSON.parse(localStorage.getItem("jokerQuiz"));if(_q)QS={last:_q.last||"",ok:!!_q.ok,streak:+_q.streak||0,best:+_q.best||0,total:+_q.total||0}}catch(e){}
+  var QS={last:"",ok:false,streak:0,best:0,total:0,pick:-1};
+  try{var _q=JSON.parse(localStorage.getItem("jokerQuiz"));if(_q)QS={last:_q.last||"",ok:!!_q.ok,streak:+_q.streak||0,best:+_q.best||0,total:+_q.total||0,pick:(_q.pick==null?-1:+_q.pick)}}catch(e){}
   function saveQS(){try{localStorage.setItem("jokerQuiz",JSON.stringify(QS))}catch(e){}}
   var qbox=d.getElementById("qbox"),qMode="daily",qStep=0,qAns=[],qTimer=0;
   function el(t,c,x){var e=d.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
@@ -979,9 +992,9 @@ footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}footer a:hove
     var done=QS.last===today;
     qbox.appendChild(el("h3",null,q[0]));
     q[1].forEach(function(o,i){var b=el("button","qopt",o);b.type="button";
-      if(done){b.disabled=true;if(i===q[2])b.classList.add("ok");else if(!QS.ok&&b.dataset.pick==="1")b.classList.add("no")}
+      if(done){b.disabled=true;if(i===q[2])b.classList.add("ok");else if(!QS.ok&&i===QS.pick)b.classList.add("no")}
       b.addEventListener("click",function(){if(QS.last===today)return;var ok=i===q[2],y=new Date();y.setDate(y.getDate()-1);
-        QS.streak=ok?((QS.last===dk(y)&&QS.ok)?QS.streak+1:1):0;QS.best=Math.max(QS.best,QS.streak);QS.total+=ok?1:0;QS.last=today;QS.ok=ok;saveQS();
+        QS.streak=ok?((QS.last===dk(y)&&QS.ok)?QS.streak+1:1):0;QS.best=Math.max(QS.best,QS.streak);QS.total+=ok?1:0;QS.last=today;QS.ok=ok;QS.pick=i;saveQS();
         if(ok){S.b=(+S.b||0)+1;show();sfx("win");vib([30,40,60])}else{sfx("lose");vib(40)}
         renderDaily();var bs=qbox.querySelectorAll(".qopt");bs.forEach(function(x,k){if(k===q[2])x.classList.add("ok");else if(k===i&&!ok)x.classList.add("no")});
         var n=qbox.querySelector(".qnote");if(n)n.textContent=(ok?"Richtig! +1 Bonus-Punkt. ":"Leider falsch. ")+n.textContent;if(ok)burst(b,"#c79bff")});
@@ -1103,6 +1116,7 @@ function mul(a,b){var o=new Array(16);for(var i=0;i<4;i++)for(var j=0;j<4;j++){v
 function T(x,y,z){return[1,0,0,0,0,1,0,0,0,0,1,0,x,y,z,1]}
 function RX(a){var c=Math.cos(a),s=Math.sin(a);return[1,0,0,0,0,c,s,0,0,-s,c,0,0,0,0,1]}
 function RY(a){var c=Math.cos(a),s=Math.sin(a);return[c,0,-s,0,0,1,0,0,s,0,c,0,0,0,0,1]}
+function RZ(a){var c=Math.cos(a),s=Math.sin(a);return[c,s,0,0,-s,c,0,0,0,0,1,0,0,0,0,1]}
 function SC(s){return[s,0,0,0,0,s,0,0,0,0,s,0,0,0,0,1]}
 function PERSP(f,a,n,r){var q=1/Math.tan(f/2);return[q/a,0,0,0,0,q,0,0,0,0,(r+n)/(n-r),-1,0,0,2*r*n/(n-r),0]}
 function mv(m,v){var o=[0,0,0,0];for(var r=0;r<4;r++)o[r]=m[r]*v[0]+m[4+r]*v[1]+m[8+r]*v[2]+m[12+r]*v[3];return o}
@@ -1116,6 +1130,7 @@ var bb=gl.createBuffer(),bdata=new Float32Array(16*4);
 var cards=[],hero={hero:1,z:-6,tex:null,ry0:0,rx0:0,sp:0,ph:0};cards.push(hero);
 var NF=15;for(var i=0;i<NF;i++){var side=i%2?1:-1;cards.push({id:i,nx:side*(.72+rnd()*.55),ny:(rnd()-.5)*1.5,z:-13-i*(RANGE-6)/NF-rnd()*2,s:.7+rnd()*.5,ry0:(rnd()-.5)*1.4,rx0:(rnd()-.5)*.5,sp:(rnd()-.5)*.35,ph:rnd()*6,k:i%4,tex:null})}
 var orbs=[];for(var i=0;i<5;i++){var o={orb:1,i:i,z:-6,k:i%4,tex:null,s:.3,ph:i};orbs.push(o);cards.push(o)}
+var FK=[3,1,2,1,3,2],fans=[];for(var i=0;i<6;i++){var fo={fan:1,i:i,k:FK[i],tex:null,x:0,y:0,z:-9,s:.5,a:0,ry:0,rx:0,rz:0,sx:(rnd()-.5)*9,sy:(rnd()-.5)*6,sp:(rnd()-.5)*5,ph:rnd()*6};fans.push(fo);cards.push(fo)}
 var texs={};
 function mkTex(img,w,h){var c=d.createElement("canvas");c.width=w;c.height=h;c.getContext("2d").drawImage(img,0,0,w,h);var t=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,t);
  gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,c);gl.generateMipmap(gl.TEXTURE_2D);
@@ -1131,19 +1146,21 @@ var W,H,asp,dpr,mobile,hw6,hv6,Q=2,DPRMAX=[.8,1,1.5],NSD=[0,40,80],MAXF=[3,8,15]
 if(locked)Q=+location.search.match(/q=(\d)/)[1];
 else{var nc=navigator.connection;if((nc&&nc.saveData)||(navigator.deviceMemory&&navigator.deviceMemory<=2))Q=1}
 var ST=[{x:.66,y:0,s:1,ry:0,a:1,fl:0},{x:.8,y:.15,s:.5,ry:.9,a:.75,fl:0},{x:-.8,y:-.1,s:.5,ry:-.9,a:.75,fl:0},{x:.8,y:.1,s:.5,ry:.8,a:.75,fl:0},{x:0,y:-.55,s:.5,ry:0,a:0,fl:0},{x:0,y:0,s:.5,ry:0,a:0,fl:0},{x:0,y:0,s:.5,ry:0,a:0,fl:0},{x:0,y:0,s:1.45,ry:0,a:.6,fl:Math.PI},{x:.72,y:-.05,s:.75,ry:-.6,a:.95,fl:0}];
+[1,2.3,2.3,2.3,1.6,1,1,.6,1.8].forEach(function(f,i){ST[i].f=f});
 var STm=[];
 var secEls=[".hero","#streams","#bereiche","#neu","#community","#ziehen","#album","#creator-code","#ueber-mich"].map(function(s){return d.querySelector(s)});
 function size(){dpr=Math.min(devicePixelRatio||1,DPRMAX[Q]);W=cv.width=Math.round(innerWidth*dpr);H=cv.height=Math.round(innerHeight*dpr);gl.viewport(0,0,W,H);asp=W/H;mobile=asp<1.05;
  hw6=TF*asp*6;hv6=TF*6;
  STm=ST.map(function(s,i){var o={};for(var k in s)o[k]=s[k];if(mobile){if(i===0){o.x=.46;o.y=-.68}else o.x=s.x*.6}return o});
- var hw=TF*asp*10,hv=TF*10;cards.forEach(function(c){if(!c.hero&&!c.orb){c.x=c.nx*hw;c.y=c.ny*hv}})}
+ var hw=TF*asp*10,hv=TF*10;cards.forEach(function(c){if(!c.hero&&!c.orb&&!c.fan){c.x=c.nx*hw;c.y=c.ny*hv}})}
 size();addEventListener("resize",function(){size();req()});
+window.__introT0=window.__introT0||(window.__introDone?0:3700);window.addEventListener("jokerIntroDone",function(){window.__introT0=Math.min(window.__introT0,performance.now())});
 var cz=0,px=0,py=0,tpx=0,tpy=0,t0=performance.now(),pend=0,sc=0;
 function chap(){var vh=innerHeight,vy=vh*.5,cs=secEls.map(function(e){if(!e)return 0;var r=e.getBoundingClientRect();return r.top+r.height/2});
  var i=0;for(;i<cs.length-1;i++){if(cs[i+1]>vy)break}
  var a=STm[Math.min(i,STm.length-1)],b=STm[Math.min(i+1,STm.length-1)],t=i>=cs.length-1?0:(vy-cs[i])/(cs[i+1]-cs[i]||1);t=Math.max(0,Math.min(1,t));t=t*t*(3-2*t);
  function L(k){return a[k]+(b[k]-a[k])*t}
- return{x:L("x"),y:L("y"),s:L("s"),ry:L("ry"),a:L("a"),fl:L("fl"),cc:cs[4],vh:vh}}
+ return{x:L("x"),y:L("y"),s:L("s"),ry:L("ry"),a:L("a"),fl:L("fl"),f:L("f"),cc:cs[4],vh:vh}}
 var qb2=0;
 addEventListener("pointermove",function(e){tpx=(e.clientX/innerWidth-.5)*2;tpy=(e.clientY/innerHeight-.5)*2;if(heroPoly)d.body.style.cursor=inPoly(e.clientX,e.clientY)?'pointer':''},{passive:true});
 addEventListener("deviceorientation",function(e){if(e.gamma==null)return;tpx=Math.max(-1,Math.min(1,e.gamma/30));tpy=Math.max(-1,Math.min(1,(e.beta-50)/40))},{passive:true});
@@ -1199,14 +1216,21 @@ function draw(now){
  var st=chap();flipAuto=st.fl;flipA+=((flipT||flipAuto)-flipA)*(still?1:.1);
  gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);gl.enable(gl.BLEND);gl.blendFunc(gl.ONE,gl.ONE_MINUS_SRC_ALPHA);
  if(Q>=1&&!still)drawBeams(t);
- var VP=mul(PERSP(FOV,asp,.1,120),T(-px*.35,py*.2,-cz));
+ var ip=window.__introT0?Math.max(0,Math.min(1,(now-window.__introT0)/2400)):1;ip=1-Math.pow(1-ip,3);var cam=cz+(1-ip)*9;
+ var VP=mul(PERSP(FOV,asp,.1,120),T(-px*.35,py*.2,-cam));
  if(NSD[Q]){gl.useProgram(P4);gl.bindBuffer(gl.ARRAY_BUFFER,sb);var l4=gl.getAttribLocation(P4,"a");gl.enableVertexAttribArray(l4);gl.vertexAttribPointer(l4,4,gl.FLOAT,false,0,0);
   gl.uniformMatrix4fv(U4.uVP,false,VP);gl.uniform1f(U4.uS,.1*H*.5/TF);gl.uniform1f(U4.uT,t);gl.drawArrays(gl.POINTS,0,NSD[Q]);gl.disableVertexAttribArray(l4)}
  /* Showreel-Textur */
  vready=!!(vid&&vid.isConnected&&vid.readyState>=2&&vid.videoWidth&&!vid.paused);
  if(vready&&((vfr++)&1)===0){gl.activeTexture(gl.TEXTURE2);gl.bindTexture(gl.TEXTURE_2D,vtex);try{gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,vid)}catch(e){vready=false}gl.activeTexture(gl.TEXTURE0)}
  /* Hero folgt der Kamera durch die Kapitel */
- var base=mobile?.5:.74;hero.s=base*st.s;hero.x=st.x*hw6;hero.y=st.y*hv6+Math.sin(t*.9)*.08;hero.z=cz-6;hero.a=st.a;
+ var base=mobile?.5:.74;hero.s=base*st.s;hero.x=st.x*hw6;hero.y=st.y*hv6+Math.sin(t*.9)*.08;hero.z=cz-6;hero.a=st.a*sm(0,.4,ip);
+ var NFAN=Q?(mobile?4:6):0;
+ fans.forEach(function(f,n){var rk=(n>>1)+1,sd=n%2?1:-1,pc=Math.max(0,Math.min(1,ip*1.5-n*.1));pc=1-Math.pow(1-pc,3);
+  var sp=rk*.55*hero.s*st.f,tx=Math.max(-hw6*1.15,Math.min(hw6*1.15,hero.x+sd*sp));
+  f.x=tx+(1-pc)*f.sx;f.y=hero.y-rk*rk*.05*hero.s+Math.sin(t*.8+f.ph)*.1+(1-pc)*f.sy;f.z=hero.z-rk*.4;f.s=hero.s*(.8-rk*.06);
+  f.ry=st.ry+px*.55*(1+rk*.25)+sd*rk*.16;f.rx=-py*.25+Math.cos(t*.5+f.ph)*.05;f.rz=-sd*rk*.1*Math.min(1.5,st.f)+(1-pc)*f.sp;
+  f.a=n<NFAN?st.a*.92*pc:0});
  /* Karten rund um den Discord-Knopf */
  var fc=Math.max(0,Math.min(1,1-Math.abs(st.cc-st.vh*.5)/(st.vh*.9))),bt=d.querySelector("#community .btn"),ox=0,oy=0;
  if(bt){var br=bt.getBoundingClientRect();ox=((br.left+br.width/2)/innerWidth*2-1)*hw6;oy=-((br.top+br.height/2)/innerHeight*2-1)*hv6}
@@ -1214,17 +1238,18 @@ function draw(now){
  cards.sort(function(a,b){return a.z-b.z});
  gl.useProgram(P1);gl.bindBuffer(gl.ARRAY_BUFFER,qb);var l=gl.getAttribLocation(P1,"a");gl.enableVertexAttribArray(l);gl.vertexAttribPointer(l,2,gl.FLOAT,false,0,0);
  gl.uniformMatrix4fv(U1.uVP,false,VP);
- gl.uniform3f(U1.uC,px*.35,-py*.2,cz);gl.uniform3f(U1.uL,px*.9+.3,-py*.7+.6,1);gl.uniform1i(U1.uT,0);gl.uniform1i(U1.uB,1);gl.uniform1i(U1.uVT,2);
+ gl.uniform3f(U1.uC,px*.35,-py*.2,cam);gl.uniform3f(U1.uL,px*.9+.3,-py*.7+.6,1);gl.uniform1i(U1.uT,0);gl.uniform1i(U1.uB,1);gl.uniform1i(U1.uVT,2);
  gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,backTex);gl.activeTexture(gl.TEXTURE2);gl.bindTexture(gl.TEXTURE_2D,vtex);gl.activeTexture(gl.TEXTURE0);
  cards.forEach(function(c){
   if(!c.tex||(!c.hero&&!c.orb&&c.id>=MAXF[Q]))return;var dist=cz-c.z;if(dist<.6)return;
-  var a;if(c.hero||c.orb)a=c.a;else a=sm(1.2,3.4,dist)*(1-sm(26,52,dist))*(mobile?.55:.85);
+  var a;if(c.hero||c.orb||c.fan)a=c.a;else a=sm(1.2,3.4,dist)*(1-sm(26,52,dist))*(mobile?.55:.85)*ip;
   if(a<.01)return;
   var ry,rx,rz=0,y=c.y,x=c.x;
   if(c.hero){ry=st.ry+px*.55+Math.sin(t*.5)*.12+flipA;rx=-py*.32+Math.cos(t*.4)*.05;rz=0}
   else if(c.orb){ry=-Math.cos(c.ang)*.7;rx=.15}
+  else if(c.fan){ry=c.ry;rx=c.rx;rz=c.rz}
   else{y=c.y+Math.sin(t*.6+c.ph)*.25;ry=c.ry0+t*c.sp;rx=c.rx0+Math.sin(t*.3+c.ph)*.1}
-  var M=mul(mul(mul(T(x,y,c.z),RY(ry)),RX(rx)),SC(c.s));
+  var M=mul(mul(mul(mul(T(x,y,c.z),RY(ry)),RX(rx)),RZ(rz)),SC(c.s));
   gl.uniformMatrix4fv(U1.uM,false,M);
   gl.uniform3f(U1.uN,Math.cos(rx)*Math.sin(ry),-Math.sin(rx),Math.cos(rx)*Math.cos(ry));
   if(c.hero&&a>.6){heroPoly=[[-1,-1.5],[1,-1.5],[1,1.5],[-1,1.5]].map(function(q){var v=mv(VP,mv(M,[q[0],q[1],0,1]));return[(v[0]/v[3]*.5+.5)*innerWidth,(1-(v[1]/v[3]*.5+.5))*innerHeight]})}
@@ -1248,7 +1273,7 @@ function req(){if(!still||pend)return;pend=1;requestAnimationFrame(function(now)
 requestAnimationFrame(function(){cv.classList.add("on")});
 if(!still)requestAnimationFrame(frame);
 },{timeout:1200})}
-if(window.__introDone)startGL();else addEventListener("jokerIntroDone",startGL,{once:true});
+startGL();
 </script>
 </body>
 </html>
